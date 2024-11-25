@@ -65,3 +65,57 @@ export void assignment_initialization(){
     fmt::println("sizeof int: {}", sizeof(int));
     fmt::println("sizeof truck_count: {}", sizeof(truck_count));
 }
+
+
+export void integer_modifiers(){
+    //Signed and unsigned modifiers
+    signed int value1 {10}; // both negative and positive values
+    signed int value2 {-20};
+    unsigned int value3 {300};
+
+    fmt::println("Value1: {}", value1);
+    fmt::println("Value2: {}", value2);
+    fmt::println("Value3: {}", value3);
+
+    //Short and long
+    short int short_var {-32768}; // 2 Bytes
+    short int short_int{ 455 };//
+    signed short signed_short{ 122 };//
+    signed short int signed_short_int{ -456 };//
+    unsigned short int unsigned_short_int{ 456 };
+
+    long long_var{ 88 };// 4 OR 8 Bytes
+    long int long_int{ 33 };
+    signed long signed_long{ 44 };
+    signed long int signed_long_int{ 44 };
+    unsigned long int unsigned_long_int{ 44 };
+
+
+    long long long_long{ 888 };// 8 Bytes
+    long long int long_long_int{ 999 };
+    signed long long signed_long_long{ 444 };
+    signed long long int signed_long_long_int{ 1234 };
+    unsigned long long int unsigned_long_long_int{ 1234 };
+
+
+    fmt::println("Short variable : {}, size : {} bytes", short_var, sizeof(short));
+    fmt::println("Short Int : {}, size : {} bytes", short_int, sizeof(short int));
+    fmt::println("Signed short : {}, size : {} bytes", signed_short, sizeof(signed short));
+    fmt::println("Signed short int : {}, size : {} bytes", signed_short_int, sizeof(signed short int));
+    fmt::println("unsigned short int : {}, size : {} bytes", unsigned_short_int, sizeof(unsigned short int));
+    fmt::println("---------------------");
+
+    fmt::println("Long variable : {}, size : {} bytes", long_var, sizeof(long));
+    fmt::println("Long int : {}, size : {} bytes", long_int, sizeof(long int));
+    fmt::println("Signed long : {}, size : {} bytes", signed_long, sizeof(signed long));
+    fmt::println("Signed long int : {}, size : {} bytes", signed_long_int, sizeof(signed long int));
+    fmt::println("unsigned long int : {}, size : {} bytes", unsigned_long_int, sizeof(unsigned long int));
+    fmt::println("---------------------");
+
+    fmt::println("Long long : {}, size : {} bytes", long_long, sizeof(long long));
+    fmt::println("Long long int : {}, size : {} bytes", long_long_int, sizeof(long long int));
+    fmt::println("Signed long long : {}, size : {} bytes", signed_long_long, sizeof(signed long long));
+    fmt::println("Signed long long int : {}, size : {} bytes", signed_long_long_int, sizeof(signed long long int));
+    fmt::println("unsigned long long int : {}, size : {} bytes", unsigned_long_long_int, sizeof(unsigned long long int));
+    fmt::println("---------------------");
+}
