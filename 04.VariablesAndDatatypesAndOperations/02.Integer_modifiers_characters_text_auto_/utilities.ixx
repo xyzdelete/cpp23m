@@ -1,6 +1,9 @@
 module;
 
 #include <fmt/format.h>
+#include <vector>
+#include <array>
+#include <string>
 
 export module utilities; 
 
@@ -118,4 +121,141 @@ export void integer_modifiers(){
     fmt::println("Signed long long int : {}, size : {} bytes", signed_long_long_int, sizeof(signed long long int));
     fmt::println("unsigned long long int : {}, size : {} bytes", unsigned_long_long_int, sizeof(unsigned long long int));
     fmt::println("---------------------");
+}
+
+
+export void floating_point_numbers(){
+    //Fractional numbers
+    float number1{ 1.12345678901234567890f };// Precision : 7
+    double number2{ 1.12345678901234567890 };// Precision : 15
+    long double number3{ 1.12345678901234567890L };
+
+    // Precision
+    fmt::println("number1 is : {}", number1);// 7 digits
+    fmt::println("number2 is : {}", number2);// 15'ish digits
+    fmt::println("number3 is : {}", number3);// 15+ digits
+
+    // Scientific notation
+    // What we have seen so far in terms of floating point types
+    // is fixed notation. There is another notation, scientific
+    // that is handy if you have really huge numbers or small numbers
+    // to represent
+    fmt::println("-------------------------");
+    double number5{ 192400023 };
+    double number6{ 1.92400023e8 };
+    double number7{ 1.924e8 };// Can ommit the lower 00023
+                                  // for simplicity if our application allows that.
+    double number8{ 0.00000000003498 };
+    double number9{ 3.498e-11 };// multiply with 10 exp(-11)
+
+    fmt::println("number5 is : {}", number5);
+    fmt::println("number6 is : {}", number6);
+    fmt::println("number7 is : {}", number7);
+    fmt::println("number8 is : {}", number8);
+    fmt::println("number9 is : {}", number9);
+}
+
+export void infinity_nan(){
+    //Infinity and NaN
+    double number10 {-5.6};
+    double number11 {0}; // Initialized to 0
+    double number12 {0}; // Initialized to 0
+
+    //Infinity
+    double result = number10 / number11;
+
+    fmt::println("{} / {} yields {}", number10, number11, result);
+    fmt::println(" {} + {} yields {}", result, number10, result + number10);
+
+    //NaN
+    result = number11 / number12;
+    fmt::println("{} / {} = {}", number11, number12, result);
+}
+
+export void bool_type(){
+    //Booleans
+    bool red_light {false};
+    bool green_light {true};
+
+    fmt::println(" Red light: {}", red_light);
+    fmt::println(" Green light: {}", green_light);
+
+    if(red_light == true){
+        //This will execute
+        fmt::println("Red light is true");
+    }else{
+        //This will execute
+        fmt::println("Red light is not true");
+    }
+
+    //Using the sizeof operator
+    fmt::println("Size of bool is: {}", sizeof(bool));
+
+    //Print info in a bool
+    fmt::println("Red light: {}", red_light);
+    fmt::println("Green light: {}", green_light);
+}
+
+
+export void characters_and_text(){
+    //Characters and text
+    char character1 {'a'};
+    char character2 {'r'};
+    char character3 {'r'};
+    char character4 {'o'};
+    char character5 {'w'};
+
+    fmt::println("{}",character1);
+    fmt::println("{}",character2);
+    fmt::println("{}",character3);
+    fmt::println("{}",character4);
+    fmt::println("{}",character5);
+    
+    char value = 65;
+    fmt::println("value: {}", value);
+    fmt::println("value(int): {}", static_cast<unsigned int>(value));
+}
+
+
+export void collections_of_characters(){
+    //Collections of characters
+    //std::vector<char> characters {'a', 'r', 'r', 'o', 'w'};
+    //std::array<char,5> charactes {'a','r','r','o','w'};
+    std::vector<int> numbers {10, 20 , 100, 200};
+
+    //fmt::println("{}", characters);
+
+    //std::string
+    std::string message {"arrow"};
+    fmt::println("Message is: {}", message);
+
+    std::string greeting {"Hello"};
+    fmt::println("Greeting: {}", greeting);
+
+    //Append to the string
+    greeting.append(" there!");
+    fmt::println("Greeting: {}", greeting);
+}
+
+export void auto_keyword(){
+    //Auto keyword
+    auto var1 { 12 };
+    auto var2 { 13.0 };
+    auto var3 { 14.0f };
+    auto var4 { 15.0l };
+    auto var5 { 'e' };
+
+    //int modifiers
+    auto var6 { 123u }; // unsigned int
+    auto var7 { 123ul }; // unsigned long
+    auto var8 { 123ll }; // long long
+
+    fmt::println("var1 occupies : {} bytes", sizeof(var1));
+  	fmt::println("var2 occupies : {} bytes", sizeof(var2));
+  	fmt::println("var3 occupies : {} bytes", sizeof(var3));
+  	fmt::println("var4 occupies : {} bytes", sizeof(var4));
+  	fmt::println("var5 occupies : {} bytes", sizeof(var5));
+  	fmt::println("var6 occupies : {} bytes", sizeof(var6));
+  	fmt::println("var7 occupies : {} bytes", sizeof(var7));
+  	fmt::println("var8 occupies : {} bytes", sizeof(var8));
 }
