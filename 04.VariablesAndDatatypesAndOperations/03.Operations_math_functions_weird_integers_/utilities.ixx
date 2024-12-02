@@ -288,51 +288,39 @@ export void conversions(){
     fmt::println("int_pi: {}", int_pi);
 }
 
-
 export void overflow_underflow(){
     //Overflow and underflow
     unsigned char data {250};
-    fmt::println("unsigned char min: {} and max: {}", 
-                            std::numeric_limits<unsigned char>::min(), 
-                            std::numeric_limits<unsigned char>::max());
-    ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 251
+    fmt::println("unsigned char min: {}, max: {}",
+                    std::numeric_limits<unsigned char>::min(),
+                    std::numeric_limits<unsigned char>::max());
 
     ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 252
+    fmt::println("data: {}", static_cast<int>(data)); // 251
 
     ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 253
+    fmt::println("data: {}", static_cast<int>(data)); // 252
 
     ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 254
+    fmt::println("data: {}", static_cast<int>(data)); // 253
 
     ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 255
+    fmt::println("data: {}", static_cast<int>(data)); // 254
 
     ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // Reset to 0
+    fmt::println("data: {}", static_cast<int>(data)); // 255
 
-    ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 1 
+    ++data; // About to overflow
+    fmt::println("data: {}", static_cast<int>(data)); // 256
 
-    ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 2
 
-    ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 3
-
-    ++data;
-    fmt::println("data: {}", static_cast<int>(data));   // 4
-
+    //Underflow
     data = 1;
 
     --data;
-    fmt::println("data: {}", static_cast<int>(data));   // 0
+    fmt::println("data: {}", static_cast<int>(data)); //    0 
 
     --data;
-    fmt::println("data: {}", static_cast<int>(data));   // 255
+    fmt::println("data: {}", static_cast<int>(data)); //  255
 
-    --data;
-    fmt::println("data: {}", static_cast<int>(data));   // 254
 }
