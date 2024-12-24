@@ -31,9 +31,6 @@ namespace it_1{
 
         sf::RenderWindow window(sf::VideoMode(width, height), title);
 
-        // sf::CircleShape shape(circle_radius);
-        // shape.setFillColor(shape_color);
-        //Create multiple shapes and store them in a vector
         std::vector < sf::CircleShape> shapes;
 
         for(size_t i{0}; i < 5; ++i){
@@ -45,8 +42,6 @@ namespace it_1{
 
         while (window.isOpen())
         {
-
-
             sf::Event event;
             while (window.pollEvent(event))
             {
@@ -61,17 +56,35 @@ namespace it_1{
                     }
 
                     if(event.key.code == sf::Keyboard::A){
-
+                        std::cout << "A was pressed" << std::endl;
+                        for (auto& shape : shapes) {
+                            shape.setFillColor(sf::Color::Blue);
+                        }
                     }
                     if(event.key.code == sf::Keyboard::B){
+                        std::cout << "B was pressed" << std::endl;
+                        for (auto& shape : shapes) {
+                            shape.setFillColor(sf::Color::Yellow);
+                        }
 
                     }
                     
                     //C and D will increase and decrease the radius of the circle
                     if(event.key.code == sf::Keyboard::C){
+                        for (auto& shape : shapes) {
+                            shape.setRadius(shape.getRadius() + 10.f);
+                        }
+                        std::cout << "C was pressed" << std::endl;
 
                     }
                     if(event.key.code == sf::Keyboard::D){
+                        for (auto& shape : shapes) {
+                            //Protect against negative radius
+                            if(shape.getRadius() > 10.f)
+                            {
+                                shape.setRadius(shape.getRadius() - 10.f);
+                            }
+                        }
 
                     }
                 }
