@@ -23,10 +23,8 @@
               4. Animate Multiple Shapes with Timers
                 . Task: Create multiple shapes (using std::vector or std::array) and move them both horizontally and vertically across the window . 
 
-              5. Resize Shape Array Based on Mouse Clicks
-                . Task: Start with a fixed number of shapes stored in std::array or std::vector. Each time the 
-                    left mouse button is pressed, add a new shape to the container. When the right mouse button 
-                    is pressed, remove the last shape (if any).
+              5. Draw shapes at the position where the mouse is clicked in the window
+                . Task: Draw the shapes in a way that the colors are random, and the radii are random
                 . Hint: Dynamically adjust the size of the container using std::vector and add/remove shapes as needed.
                 . Objective: Work with dynamic container resizing, and understand how to manage adding and removing elements in std::vector.
            
@@ -42,5 +40,6 @@ int main(){
     //it_2::app();
     //it_3::app();
     it_4::app();
+    //it_5::app();
 
 }

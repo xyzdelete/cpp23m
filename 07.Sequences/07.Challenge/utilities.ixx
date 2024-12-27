@@ -5,6 +5,7 @@ module;
 #include <iostream>
 #include <vector>
 #include <array>
+#include <random>
 
 export module utilities; 
 
@@ -338,7 +339,6 @@ namespace it_4{
         sf::Color shape_color{sf::Color::Green};
         sf::Color background_color{sf::Color::Black};
 
-
         sf::RenderWindow window(sf::VideoMode(width, height), title);
 
         //Vector to store multiple shpes
@@ -398,7 +398,6 @@ namespace it_4{
 
                     //Move the shapes in the current direction
                     shape.move(direction);
-                    
                 }
                 clock.restart();
             }
@@ -409,10 +408,109 @@ namespace it_4{
             }
             window.display();
         }
-
     }
-}
+}   //namespace it_4
+
+/*
+    5. Draw shapes at the position where the mouse is clicked in the window
+        . Task: Draw the shapes in a way that the colors are random, and the radii are random
+        . Hint: Dynamically adjust the size of the container using std::vector and add/remove shapes as needed.
+        . Objective: Work with dynamic container resizing, and understand how to manage adding and removing elements in std::vector.
+
+*/
+namespace it_5{
+
+    export void app(){
+        //Store data in pre-defined variable
+        constexpr int width {600};
+        constexpr int height {600};
+        constexpr float circle_radius {40.f};
+        constexpr float clock_period{.02f};
+        const std::string title {"SFML Shape Resizer"};
+        sf::Color shape_color{sf::Color::Green};
+        sf::Color background_color{sf::Color::Black};
+        
+        sf::RenderWindow window(sf::VideoMode(width, height), title);
+
+        //Vector to store multiple shpes
+        std::vector < sf::CircleShape> shapes;
+
+        // Random number generation setup
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_real_distribution<float> radius_distr(10.f, 50.f); // Circle sizes between 10 and 50
+        std::uniform_int_distribution<int> color_distr(0, 255);       // Colors in the RGB range
+
+        while (window.isOpen())
+        {
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed){
+                    window.close();
+                }
+
+                //Key Events
+                if(event.type == sf::Event::KeyPressed){
+                    if(event.key.code == sf::Keyboard::Escape){
+                        window.close();
+                    }
+                }
+
+                //Mouse events
+                if(event.type == sf::Event::MouseButtonPressed){
+                    //If the left button is pressed
+                    if(event.mouseButton.button == sf::Mouse::Left){
+
+                        //Add shape at the position of the cursor
+
+                        //Grab the mouse position
+                        float mouse_x = static_cast<float>(event.mouseButton.x);
+                        float mouse_y = static_cast<float>(event.mouseButton.y);
+
+                        //Generate the random radius
+                        float random_radius = radius_distr(gen);
+
+                        // Adjust position to keep the shape fully within bounds
+                        if (mouse_x + random_radius > width) mouse_x = width - random_radius;
+                        if (mouse_x - random_radius < 0) mouse_x = random_radius;
+                        if (mouse_y + random_radius > height) mouse_y = height - random_radius;
+                        if (mouse_y - random_radius < 0) mouse_y = random_radius;
+
+                        //Generate the random color
+                        sf::Color random_color(color_distr(gen), color_distr(gen), color_distr(gen));
+
+                        //Create the shape and add it to the vector
+                        sf::CircleShape new_shape(random_radius);
+                        new_shape.setFillColor(random_color);
+                        new_shape.setPosition(mouse_x - random_radius, mouse_y - random_radius); // Center the shape
+                        shapes.push_back(new_shape);
+
+                        std::cout << "Added shape at: (" << mouse_x << ", " << mouse_y << ") with radius: " 
+                        << random_radius << " and color: (" 
+                        << (int)random_color.r << ", " 
+                        << (int)random_color.g << ", " 
+                        << (int)random_color.b << ")\n";
+
+                    }else if(event.mouseButton.button == sf::Mouse::Right){
+                        //Remove the last shape
+                        if(!shapes.empty()){
+                            shapes.pop_back();
+                            std::cout << "Removed the last shape. \n";
+                        }
+
+                    }
+                }
+            }
 
 
+            window.clear(background_color);
+            for(size_t i{0}; i < shapes.size(); ++i){
+                window.draw(shapes[i]);
+            }
+            window.display();
+        }
+    }
 
+}   //namespace it_5
 
