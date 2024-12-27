@@ -21,9 +21,7 @@
                 . Objective: Get familiar with accessing data in built-in arrays and manipulating the shape’s color.
 
               4. Animate Multiple Shapes with Timers
-                . Task: Create multiple shapes (using std::vector or std::array) and move them horizontally across the window at different speeds. Each shape should have its own timer (tracked in a container) to determine when it moves.
-                . Hint: Use std::vector<sf::Clock> to store separate timers for each shape and adjust their positions based on elapsed time.
-                . Objective: Practice with multiple timers and iterating through containers to update positions.
+                . Task: Create multiple shapes (using std::vector or std::array) and move them both horizontally and vertically across the window . 
 
               5. Resize Shape Array Based on Mouse Clicks
                 . Task: Start with a fixed number of shapes stored in std::array or std::vector. Each time the 
@@ -42,6 +40,7 @@ int main(){
 
     //it_1::app();
     //it_2::app();
-    it_3::app();
+    //it_3::app();
+    it_4::app();
 
 }
