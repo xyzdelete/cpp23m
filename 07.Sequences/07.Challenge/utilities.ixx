@@ -16,11 +16,8 @@ export module utilities;
         .  Hint: Use std::vector<sf::CircleShape> to store the shapes.
         .  Objective: Students should get used to working with dynamic containers like std::vector.
 */
-
 namespace it_1{
-
     export void app(){
-
         //Store data in pre-defined variable
         constexpr int width {200};
         constexpr int height {200};
@@ -29,7 +26,6 @@ namespace it_1{
         const std::string title {"SFML works!"};
         sf::Color shape_color{sf::Color::Green};
         sf::Color background_color{sf::Color::Red};
-
 
         sf::RenderWindow window(sf::VideoMode(width, height), title);
 
@@ -68,7 +64,6 @@ namespace it_1{
                         for (auto& shape : shapes) {
                             shape.setFillColor(sf::Color::Yellow);
                         }
-
                     }
                     
                     //C and D will increase and decrease the radius of the circle
@@ -77,7 +72,6 @@ namespace it_1{
                             shape.setRadius(shape.getRadius() + 10.f);
                         }
                         std::cout << "C was pressed" << std::endl;
-
                     }
                     if(event.key.code == sf::Keyboard::D){
                         for (auto& shape : shapes) {
@@ -87,10 +81,8 @@ namespace it_1{
                                 shape.setRadius(shape.getRadius() - 10.f);
                             }
                         }
-
                     }
                 }
-
                 //Mouse Events
             }
 
@@ -101,9 +93,7 @@ namespace it_1{
             }
             window.display();
         }
-
     }
-
 } // namespace it_1
 
 /*
@@ -115,11 +105,9 @@ namespace it_1{
         . Objective: Practice with std::array for fixed-size containers and updating data circularly.
 
 */
-
 namespace it_2{
 
     export void app(){
-
         //Store data in pre-defined variable
         constexpr int width {200};
         constexpr int height {200};
@@ -128,7 +116,6 @@ namespace it_2{
         const std::string title {"SFML works!"};
         sf::Color shape_color{sf::Color::Green};
         sf::Color background_color{sf::Color::Red};
-
 
         sf::RenderWindow window(sf::VideoMode(width, height), title);
 
@@ -176,7 +163,6 @@ namespace it_2{
                         for (auto& shape : shapes) {
                             shape.setFillColor(sf::Color::Yellow);
                         }   
-
                     }
                     
                     //C and D will increase and decrease the radius of the circle
@@ -186,7 +172,6 @@ namespace it_2{
                         }
                         std::cout << "C was pressed" << std::endl;
                         pressed_key = 'C';
-
                     }
                     if(event.key.code == sf::Keyboard::D){
                         for (auto& shape : shapes) {
@@ -197,8 +182,6 @@ namespace it_2{
                             }
                         }
                         pressed_key = 'D';
-
-
                     }
                     //Store the current key and print history
                     if( pressed_key != ' '){
@@ -261,7 +244,6 @@ namespace it_3{
         sf::Color shape_color{sf::Color::Green};
         sf::Color background_color{sf::Color::Red};
 
-
         sf::RenderWindow window(sf::VideoMode(width, height), title);
 
         std::vector < sf::CircleShape> shapes;
@@ -318,9 +300,7 @@ namespace it_3{
             }
             window.display();
         }
-
     }
-
 }
 
 /*
@@ -503,7 +483,6 @@ namespace it_5{
                 }
             }
 
-
             window.clear(background_color);
             for(size_t i{0}; i < shapes.size(); ++i){
                 window.draw(shapes[i]);
@@ -511,6 +490,4 @@ namespace it_5{
             window.display();
         }
     }
-
 }   //namespace it_5
-
