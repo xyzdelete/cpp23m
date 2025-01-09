@@ -22,5 +22,6 @@ target_sources(${PROJECT_NAME}
         FILE_SET CXX_MODULES FILES
         utilities.ixx
         unique_pointers.ixx
+        shared_pointers.ixx
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)

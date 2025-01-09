@@ -87,6 +87,7 @@ namespace unique_pointers
         //----------------------------------------------------------------------------------
 
         // Can however move the pointer.
+        /*
         std::unique_ptr<int> up_int11 = std::make_unique<int>(110);
         {
             std::unique_ptr<int> up_int12 = std::move(up_int11); // Now up_int12 manages int11
@@ -102,6 +103,20 @@ namespace unique_pointers
 
         }
         fmt::println( "Hitting the outside scope" );
+        */
+
+        //----------------------------------------------------------------------------------
+        // Can reset unique_ptr : releases memory and sets the pointer to nullptr
+        std::unique_ptr<int> up_int13 = std::make_unique<int>(130);
+        up_int13.reset();// releases memory and sets pointer to nullptr
+
+        // Can use unique pointer in if statement to see if it points somewhere valid
+        if (up_int13) {
+            fmt::println("up_int13 points somewhere valid : {}", fmt::ptr(up_int13.get()));
+        } else {
+            fmt::println("up_int13 points is null : {}", fmt::ptr(up_int13.get()));
+        }
+
 
     }
     
