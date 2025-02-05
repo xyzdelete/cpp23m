@@ -15,12 +15,15 @@ find_package(fmt CONFIG REQUIRED)
 
 #We're using the project name as the target name, but you can change it to make them different.
 #With this setup, the name of the executable will be the same as the project name.
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp ct4.cpp)
 
 target_sources(${PROJECT_NAME}
         PUBLIC
         FILE_SET CXX_MODULES FILES
         utilities.ixx
         ct1.ixx
+        ct2.ixx
+        ct3.ixx
+        ct4.ixx 
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
