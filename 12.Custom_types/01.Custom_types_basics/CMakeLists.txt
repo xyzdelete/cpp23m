@@ -25,5 +25,8 @@ target_sources(${PROJECT_NAME}
         ct2.ixx
         ct3.ixx
         ct4.ixx 
+        ct5.ixx
+        ct6.ixx
+        ct7.ixx 
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
