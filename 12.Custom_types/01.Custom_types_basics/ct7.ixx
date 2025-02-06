@@ -1,3 +1,31 @@
+/*
+    . Showcasing cases where one has to go through constructor initializer lists.
+        . When data members are const:
+            . If we add a const member to the Pixel class, 
+                it must be initialized through the constructor initializer 
+                list since const members cannot be modified after the object is created.
+        . When data members are references:
+
+            . References must also be initialized through the constructor
+                initializer list because a reference must always be bound
+                to a valid object upon initialization.
+        . When data members are objects of a class without a default constructor:
+
+            . If a member is an object of a class that doesn’t have a default
+                 constructor, we must initialize it in the constructor initializer list,
+                     as it cannot be default-constructed.
+                     
+    . Key Points In the code: 
+        . Const member (m_const_color):
+            This member is const, so it must be initialized using the initializer list in the constructor. In this example, m_const_color is initialized in all constructors.
+
+        . Reference member (m_ref_color):
+            A reference must be initialized when it is declared. In the example, m_ref_color is initialized to a reference of color in the constructor's initializer list.
+
+        . Object without default constructor (m_position):
+            The Position struct does not have a default constructor, so we must initialize m_position using the initializer list with the given x and y values.
+
+*/
 module;
 
 #include <cstdint>
@@ -52,7 +80,7 @@ namespace ct7
         m_ref_color = color;
         m_position = pos;
         */
-       
+
         fmt::print(
             "Pixel created with color: 0x{:08X} at Position({}, {}) using a reference to 0x{:08X}\n", 
             color, 
