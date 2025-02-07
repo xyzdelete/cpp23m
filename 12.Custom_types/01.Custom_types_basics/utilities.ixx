@@ -15,6 +15,7 @@ import ct6;
 import ct7;
 import ct8;
 import ct9;
+import ct10;
 
 export void ct1_demo(){
     /*
@@ -250,4 +251,12 @@ export void ct9_demo(){
     // 6. Explicit copy constructor
     ct9::Pixel p5(p1);  // Copy constructor is explicitly called
 
+}
+
+
+export void ct10_demo(){
+	//ct10::Pixel p1;                    // Uses default constructor
+	//ct10::Pixel p2{0xFFFF0000};         // Uses color-only constructor, which delegates to the three-argument constructor
+	ct10::Pixel p3{0xFF00FF00, 100, 50}; // Directly uses the three-argument constructor
+	ct10::Pixel p4{p3};                 // Uses copy constructor with delegation
 }
