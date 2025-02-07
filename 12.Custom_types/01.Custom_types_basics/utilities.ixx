@@ -2,6 +2,7 @@ module;
 
 #include <fmt/format.h>
 #include <memory>
+#include <vector>
 
 export module utilities; 
 
@@ -12,6 +13,8 @@ import ct4;
 import ct5;
 import ct6;
 import ct7;
+import ct8;
+import ct9;
 
 export void ct1_demo(){
     /*
@@ -175,5 +178,76 @@ export void ct7_demo(){
 	p.set_color(0x00FF00FF);
 	p.set_x(10);
 	p.set_y(20);
+
+}
+
+
+export void ct8_demo(){
+
+	ct8::Pixel p1(0x00FF00FF, 10, 20);
+	ct8::Pixel p2 = p1;	//This how we create a copy.
+
+	fmt::println("Pixel 1 color: {:#010x}", p1.get_color());
+	fmt::println("Pixel 1 position: ({}, {})", p1.get_x(), p1.get_y());
+	fmt::println("Pixel 2 color: {:#010x}", p2.get_color());
+	fmt::println("Pixel 2 position: ({}, {})", p2.get_x(), p2.get_y());
+	fmt::println("Address of p1: {}", fmt::ptr(&p1));
+	fmt::println("Address of p2: {}", fmt::ptr(&p2));
+
+}
+
+// Example function that takes a Pixel by value
+void process_pixel(ct9::Pixel p) {
+    fmt::print("Processing pixel: color={}, pos=({}, {})\n", p.get_color(), p.get_x(), p.get_y());
+}
+
+// Example function that returns a Pixel by value
+ct9::Pixel create_pixel() {
+    ct9::Pixel p{0xFF0000, 30, 40};
+    return p;  // Copy constructor may be invoked here (but likely optimized out)
+}
+
+export void ct9_demo(){
+
+ 	/*
+	ct9::Pixel p1(0x00FF00FF, 10, 20);
+	ct9::Pixel p2 = p1; //Deep copy
+
+	fmt::println("Pixel 1 color: {:#010x}", p1.get_color());
+	fmt::println("Pixel 1 position: ({}, {})", p1.get_x(), p1.get_y());
+	fmt::println("Pixel 2 color: {:#010x}", p2.get_color());
+	fmt::println("Pixel 2 position: ({}, {})", p2.get_x(), p2.get_y());
+
+	p1.set_x(100);
+	p1.set_y(200);
+
+	fmt::println("After changing the position of Pixel 1");
+	fmt::println("Pixel 1 color: {:#010x}", p1.get_color());
+	fmt::println("Pixel 1 position: ({}, {})", p1.get_x(), p1.get_y());
+	fmt::println("Pixel 2 color: {:#010x}", p2.get_color());
+	fmt::println("Pixel 2 position: ({}, {})", p2.get_x(), p2.get_y());
+	*/
+
+
+	//Cases where the copy constructor is called
+	// 1. Copy initialization
+    ct9::Pixel p1{0xFFFFFF, 10, 20};
+    //ct9::Pixel p2 = p1;  // Copy constructor is called
+
+    // 2. Passing by value
+    //process_pixel(p1);  // Copy constructor is called to pass p1 to the function
+
+	// 3. Returning by value: This may not always call the copy constructor due to RVO (Return Value Optimization)
+    //ct9::Pixel p3 = create_pixel();  // Copy constructor may be called (or elided)
+
+	// 5. Copying an object in a collection (vector)
+	/*
+    std::vector<ct9::Pixel> pixels;
+    pixels.push_back(p1);  // Copy constructor is called when adding to the vector
+	pixels.push_back(p1);
+	*/
+
+    // 6. Explicit copy constructor
+    ct9::Pixel p5(p1);  // Copy constructor is explicitly called
 
 }
