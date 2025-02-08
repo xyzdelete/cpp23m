@@ -17,6 +17,9 @@ import ct8;
 import ct9;
 import ct10;
 import ct11;
+import ct12; // Not used
+import ct13;
+import ct14;
 
 export void ct1_demo(){
     /*
@@ -270,4 +273,38 @@ export void ct11_demo(){
 
 	ct11::Pixel p1{0xFF00FF00, 100, 50}; // Directly uses the three-argument constructor
 	ct11::print_pixel(p1);
+}
+
+export void ct13_demo(){
+	ct13::Pixel p1{0xFF00FF00, 100, 50};
+	ct13::Pixel p2{0x00FF00FF, 200, 150};
+
+	p2 = p1;
+
+	fmt::println("Pixel 1 color: {:#010x}", p1.get_color());
+	fmt::println("Pixel 1 position: ({}, {})", p1.get_x(), p1.get_y());
+	fmt::println("Pixel 2 color: {:#010x}", p2.get_color());
+	fmt::println("Pixel 2 position: ({}, {})", p2.get_x(), p2.get_y());	
+}
+
+
+export void ct14_demo(){
+
+	ct14::Pixel p1{0xFF00FF00, 100, 50};
+	ct14::Pixel p2{0x00FF00FF, 200, 150};
+
+	p2 = p1;
+
+	fmt::println("Pixel 1 color: {:#010x}", p1.get_color());
+	fmt::println("Pixel 1 position: ({}, {})", p1.get_x(), p1.get_y());
+	fmt::println("Pixel 2 color: {:#010x}", p2.get_color());
+	fmt::println("Pixel 2 position: ({}, {})", p2.get_x(), p2.get_y());
+
+
+	//Distinguishing between copy construction and copy assignment
+	ct14::Pixel p3{0xFF00FF00, 100, 50};
+	ct14::Pixel p4{p3}; // Copy constructor
+
+	p4 = p3; // Assignment operator
+
 }
