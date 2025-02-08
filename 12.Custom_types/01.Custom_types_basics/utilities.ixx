@@ -16,6 +16,7 @@ import ct7;
 import ct8;
 import ct9;
 import ct10;
+import ct11;
 
 export void ct1_demo(){
     /*
@@ -259,4 +260,14 @@ export void ct10_demo(){
 	//ct10::Pixel p2{0xFFFF0000};         // Uses color-only constructor, which delegates to the three-argument constructor
 	ct10::Pixel p3{0xFF00FF00, 100, 50}; // Directly uses the three-argument constructor
 	ct10::Pixel p4{p3};                 // Uses copy constructor with delegation
+}
+
+
+export void ct11_demo(){
+	uint32_t color = 0xFF00FF00;
+	ct11::Pixel p(color);
+	ct11::print_pixel(p);
+
+	ct11::Pixel p1{0xFF00FF00, 100, 50}; // Directly uses the three-argument constructor
+	ct11::print_pixel(p1);
 }
