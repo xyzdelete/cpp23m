@@ -23,6 +23,7 @@ import ct13;
 import ct14;
 import ct15;
 import ct16;
+import ct17;
 
 export void ct1_demo(){
     /*
@@ -422,4 +423,21 @@ export void ct16_demo(){
 		fmt::print("Pixel color: {:#08X}, Position: ({}, {})\n", p.get_color(), position.x, position.y);
 	}
 
+}
+
+
+export void ct17_demo(){
+	ct17::Pixel p1{0xFF00FF00, 100, 50};
+	ct17::Pixel p2{0x00FF00FF, 200, 150};
+
+	ct17::Canvas canvas;
+	canvas.display_pixel(p1);
+	canvas.display_pixel(p2);
+
+	ct17::print_pixel(p1);
+	ct17::print_pixel(p2);
+
+	canvas.modify_pixel(p1, 0xFFFF0000, 300, 250);
+	canvas.display_pixel(p1);
+	ct17::print_pixel(p1);
 }
