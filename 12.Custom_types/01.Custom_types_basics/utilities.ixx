@@ -3,6 +3,7 @@ module;
 #include <fmt/format.h>
 #include <memory>
 #include <vector>
+#include <filesystem>
 
 export module utilities; 
 
@@ -20,6 +21,8 @@ import ct11;
 import ct12; // Not used
 import ct13;
 import ct14;
+import ct15;
+import ct16;
 
 export void ct1_demo(){
     /*
@@ -306,5 +309,117 @@ export void ct14_demo(){
 	ct14::Pixel p4{p3}; // Copy constructor
 
 	p4 = p3; // Assignment operator
+
+}
+
+
+export void ct15_demo_pod(){
+
+	//Write and read a single pod
+	/*
+	// Define file path
+    std::filesystem::path file_path = R"(D:\sample_pod_file.bin)"; // Windows
+    //std::filesystem::path file_path = R"(/path/to/your/input_file.bin)"; // Linux
+
+	// Create a PODType object. 
+    pod_types::PODType pod = {42, 3.14159};
+
+	// Write the pod object to a binary file
+	if(pod_types::write_pod(file_path, pod)){
+		fmt::print("PODType object written to file.\n");
+	}else{
+		fmt::print("Failed to write PODType object to file.\n");
+	}
+
+	//Read the pod object back
+	pod_types::PODType read_pod;
+	if(pod_types::read_pod(file_path, read_pod)){
+		fmt::print("PODType object read from file: id={}, value={}\n", read_pod.id, read_pod.value);
+	}else{
+		fmt::print("Failed to read PODType object from file.\n");
+	}
+	*/
+
+
+	//Write and read a vector of PODs
+
+	// Define file path
+    std::filesystem::path file_path = R"(D:\sample_pod_vector.bin)"; // Windows
+    //std::filesystem::path file_path = R"(/path/to/your/input_file.bin)"; // Linux
+
+    // Create a vector of PODType objects
+    std::vector<pod_types::PODType> pod_vector = {
+        {1, 1.1},
+        {2, 2.2},
+        {3, 3.3},
+        {4, 4.4},
+        {5, 5.5}
+    };
+
+	// Write the vector of PODType objects to a binary file
+    if (pod_types::write_pod_vector(file_path, pod_vector)) {
+        fmt::print("PODType objects written to file.\n");
+    } else {
+        fmt::print("Failed to write PODType objects to file.\n");
+    }
+
+	// Read the vector of PODType objects from the binary file
+    std::vector<pod_types::PODType> read_pod_vector;
+    if (pod_types::read_pod_vector(file_path, read_pod_vector)) {
+        fmt::print("PODType objects read from file:\n");
+        for (const auto& pod : read_pod_vector) {
+            fmt::print("id={}, value={}\n", pod.id, pod.value);
+        }
+    } else {
+        fmt::print("Failed to read PODType objects from file.\n");
+    }
+
+}
+
+export void ct15_demo_non_pod(){
+
+	std::vector<non_pod_types::Person> persons = {{"Alice", 30}, {"Bob", 25}, {"Charlie", 40}};
+    std::filesystem::path file_path = R"(D:\sample_non_pod_vector.bin)"; // Windows
+    //std::filesystem::path file_path = R"(/path/to/your/input_file.bin)"; // Linux
+
+	// Serialize the vector of person objects
+    non_pod_types::write_persons_to_file(persons, file_path);
+
+	// Deserialize the vector of person objects
+    std::vector<non_pod_types::Person> loaded_persons = non_pod_types::read_persons_from_file(file_path);
+
+	// Print the loaded data
+    for (const auto& p : loaded_persons) {
+        fmt::println("Name: {}, Age: {}", p.name, p.age);
+    }
+
+}
+
+
+export void ct16_demo(){
+
+	// Create a vector of Pixel objects
+    std::vector<ct16::Pixel> pixels = {
+        ct16::Pixel(0xFF0000FF, 10, 20), // Red pixel at (10, 20)
+        ct16::Pixel(0xFF00FF00, 30, 40), // Green pixel at (30, 40)
+        ct16::Pixel(0xFFFF0000, 50, 60)  // Blue pixel at (50, 60)
+    };
+
+	// Define the file path for serialization
+    std::filesystem::path file_path = R"(D:\serialized_pixels.bin)"; // Windows
+    //std::filesystem::path file_path = R"(/path/to/your/input_file.bin)"; // Linux
+
+	// Serialize the vector of Pixel objects to a file
+	ct16::save_pixels(pixels, file_path);
+
+	//Deserialize the vector of Pixel objects from the file
+	std::vector<ct16::Pixel> deserialized_pixels = ct16::load_pixels(file_path);
+
+	// Print the deserialized Pixel objects to verify
+	fmt::println("Deserialized Pixels from binary file");
+	for (const auto& p : deserialized_pixels) {
+		auto position = p.get_position();
+		fmt::print("Pixel color: {:#08X}, Position: ({}, {})\n", p.get_color(), position.x, position.y);
+	}
 
 }
