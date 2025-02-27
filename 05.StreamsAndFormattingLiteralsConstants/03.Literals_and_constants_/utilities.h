@@ -1,8 +1,6 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
-
-export module utilities; 
 
 //constexpr functions: computations can be carried out at compile time.
 //constexpr functions can be evaluated at compile time, if all the arguments are known at compile time
@@ -11,7 +9,7 @@ export module utilities;
 // . They call run-time (non constexpr) functions
 // . They contain references to run-time global variables.
 
-export constexpr int add(int a, int b){
+constexpr int add(int a, int b){
     return a + b;
 }
 
@@ -20,7 +18,7 @@ consteval int multiply(int a, int b){
     return a * b;
 }
 
-export void literals(){
+inline void literals(){
     //Literals
     // 2 Bytes
   	short short_var{ -32768 };//  No special literal type for short
@@ -95,7 +93,7 @@ export void literals(){
 }
 
 
-export void constants(){
+inline void constants(){
     //Constants: variables you don't want to change
     const int age{34};
     const float height {1.67f};
@@ -104,7 +102,7 @@ export void constants(){
 }
 
 
-export void constexpr_variables(){
+inline void constexpr_variables(){
     //constexpr variables
     //constexpr variables are always evaluated at compile time. constexpr implies const
     constexpr int SOME_LIB_MAJOR_VERSION {1234};
@@ -127,7 +125,7 @@ export void constexpr_variables(){
   	//static_assert( age == 5); // Error. age is not a constant expression. Can't be used in a static_assert
 }
 
-export constexpr void constexpr_functions(){
+inline constexpr void constexpr_functions(){
     //constexpr functions
     constexpr int value1{22};
     constexpr int value2{33};
@@ -137,7 +135,7 @@ export constexpr void constexpr_functions(){
     auto result2{add(value1, factor)}; // Run time
 }
 
-export consteval void consteval_functions(){
+inline consteval void consteval_functions(){
     //consteval functions
     int value1{22};
     constexpr int value2{33};

@@ -1,11 +1,9 @@
-module;
+#pragma once
 
-#include <SFML/Graphics.hpp> // Global module fragment
+#include <SFML/Graphics.hpp>
 #include <iostream>
 
-export module utilities; 
-
-export void app(){
+void app(){
 
     //Store data in pre-defined variable
     constexpr int width {200};
@@ -50,5 +48,4 @@ export void app(){
         window.draw(shape);
         window.display();
     }
-
 }

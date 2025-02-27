@@ -11,7 +11,7 @@
 #include <iomanip>
 #include <ios>
 
-import utilities;
+#include "utilities.h"
 
 int main(){
     input_output_iostream();

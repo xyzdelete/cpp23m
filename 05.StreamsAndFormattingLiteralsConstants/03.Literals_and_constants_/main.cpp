@@ -8,15 +8,14 @@
         . constinit
 */
 #include <fmt/format.h>
-
-import utilities;
+#include "utilities.h"
 
 //constinit : C++20. Guarantees that the variable is initialized at compile time.
 //Initialization with a run-time value will lead to a compiler error.
 const constinit int age{24};
 
 int randomizer = 5;
-constinit int  car_count{add(3,randomizer)}; // Error. randomizer is not a compile time value
+//constinit int  car_count{add(3,randomizer)}; // Error. randomizer is not a compile time value
 
 int main(){
 
