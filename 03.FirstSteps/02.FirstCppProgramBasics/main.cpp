@@ -50,8 +50,7 @@
 // One line comment
 
 #include <fmt/format.h>
-
-import utilities; // Import the utilities module
+#include "utilities.h"
 
 int main(){
 
