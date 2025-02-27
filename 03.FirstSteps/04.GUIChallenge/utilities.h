@@ -1,12 +1,10 @@
-module;
+#ifndef UTILITIES_H
+#define UTILITIES_H
 
-#include <SFML/Graphics.hpp> // Global module fragment
+#include <SFML/Graphics.hpp>
 
-export module utilities; 
-
-export void app(){
-
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+void app() {
+    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
@@ -23,5 +21,6 @@ export void app(){
         window.draw(shape);
         window.display();
     }
-
 }
+
+#endif // UTILITIES_H
