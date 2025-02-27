@@ -6,9 +6,7 @@
 
 #include <string_view>
 #include <fmt/format.h>
-
-import utilities;
-
+#include "utilities.h"
 
 int f_add(int a, int b){
     return a + b;
