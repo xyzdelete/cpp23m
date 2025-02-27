@@ -1,11 +1,11 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <typeinfo>
+#include <cmath>
+#include <limits>
 
-export module utilities; 
-
-export void basic_operations(){
+void basic_operations(){
     //Basic operations
     int number1 {2};
     int number2 {7};
@@ -29,11 +29,9 @@ export void basic_operations(){
     // Modulus
     result = number2 % number1; // 7 % 2
     fmt::println("modulus - result : {}", result); // 1
-
 }
 
-
-export void precedence_and_associativity(){
+void precedence_and_associativity(){
     //Precedence and assiciativity
     int a {6};
     int b {3};
@@ -50,8 +48,7 @@ export void precedence_and_associativity(){
     fmt::println("result: {}", result);
 }
 
-
-export void prefix_postfix_increment_decrement_operators(){
+void prefix_postfix_increment_decrement_operators(){
     //Prefix and postfix increment/decrement operators
     int value {5};
 
@@ -74,7 +71,7 @@ export void prefix_postfix_increment_decrement_operators(){
     fmt::println("The value is: {}", --value);
 }
 
-export void compound_assignment_operators(){
+void compound_assignment_operators(){
     //Compound assignment operator
     int value {45};
 
@@ -95,7 +92,7 @@ export void compound_assignment_operators(){
     fmt::println("The value is (after %=11) : {}", value);// 8
 }
 
-export void relational_operators(){
+void relational_operators(){
     //Relational operators
     int number1 {10};
     int number2 {10};
@@ -111,7 +108,7 @@ export void relational_operators(){
     fmt::println("number1 == number2: {}", (number1 == number2));
 }
 
-export void logical_operators(){
+void logical_operators(){
     //Logical operators
     bool a {true};
     bool b {true};
@@ -143,7 +140,7 @@ export void logical_operators(){
     fmt::println("!c : {}", !c);
 }
 
-export void logical_relational_ops_combined(){
+void logical_relational_ops_combined(){
     //Logical and relational operators combined
     bool a {true};
     int d {45};
@@ -160,8 +157,7 @@ export void logical_relational_ops_combined(){
     fmt::println("(! a) && (d == e) : {}", ((!a) && (d == e)));
 }
 
-
-export void math_functions(){
+void math_functions(){
     //Math functions
     double weight {7.7};
 
@@ -189,7 +185,6 @@ export void math_functions(){
   	fmt::println("3^4 is : {}", std::pow(3, 4));
   	fmt::println("9^3 is : {}", std::pow(9, 3));
 
-
     // log: reverse function of pow. if 2^3 = 8 , log 8 in base 2 = 3.  Log is like asking
   	//  to which exponent should we elevate 2 to get eight ? Log, by default computes the log
   	//  in base e. There also is another function which uses base 10 called log10
@@ -208,8 +203,7 @@ export void math_functions(){
   	fmt::println("2.4 is rounded to : {}", std::round(2.4));
 }
 
-
-export void weird_integral_types(){
+void weird_integral_types(){
     //Weird integral types
     short int var1 {10};
     short int var2 {20};
@@ -229,7 +223,7 @@ export void weird_integral_types(){
     fmt::print("size of result2 : {}\n", sizeof(result2));// 4
 }
 
-export void conversions(){
+void conversions(){
     //Conversions: implicit or explicit(static_cast)
     //Data conversions
     // Implicit data conversions
@@ -250,7 +244,6 @@ export void conversions(){
      fmt::println("Total price : {}", total_price);
      fmt::println("sizeof total_price : {}", sizeof(total_price));
 
-
     //Implicit conversions in assignments
     // The assignment operation is going to cause an implicit
     // narrowing conversion , y is converted to int before assignment
@@ -259,7 +252,6 @@ export void conversions(){
     x = y; // double to int
     fmt::println("The value of x is : {}", x);
     fmt::println("sizeof x : {}", sizeof(x));
-
 
     // Explicit data conversions
     // Implicit cast will add up the doubles,
@@ -278,7 +270,6 @@ export void conversions(){
     sum =  static_cast<int> (p + m);
     fmt::println("Sum up then cast, result: {}", sum);
     
-
     //Old style C-cast
     double PI {3.14};
 
@@ -288,8 +279,7 @@ export void conversions(){
     fmt::println("int_pi: {}", int_pi);
 }
 
-
-export void overflow_underflow(){
+void overflow_underflow(){
     //Overflow and underflow
     unsigned char data {250};
     fmt::println("unsigned char min: {}, max: {} ", 

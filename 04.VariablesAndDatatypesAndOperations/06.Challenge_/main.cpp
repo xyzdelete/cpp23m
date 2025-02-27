@@ -1,11 +1,10 @@
 /*
-    . A simple project using sfml with cmake and vcpkg, using c+20 modules
+    . A simple project using sfml with cmake and vcpkg, using headers-based compilation
 */
 
 // One line comment
 
-
-import utilities;
+#include "utilities.h"
 
 int main() {
 

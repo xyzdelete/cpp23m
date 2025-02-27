@@ -1,10 +1,8 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 
-export module utilities; 
-
-export void print_ints_binary(){
+void print_ints_binary(){
     //Printing integers in binary
     unsigned short int data {15};
 
@@ -14,7 +12,7 @@ export void print_ints_binary(){
     fmt::println("data (bin): {:016b}", data);  // Binary (16 digits)
 }
 
-export void bitwise_shift_operators(){
+void bitwise_shift_operators(){
     //Shift operators
     unsigned short int value {0xff0u};
 
@@ -50,7 +48,7 @@ export void bitwise_shift_operators(){
     fmt::println("binary value: {:016b}, decimal value: {}", value, value);
 }
 
-export void logical_bitwise_operators(){
+void logical_bitwise_operators(){
     //Logical bitwise operators
     unsigned int value1 {0x3};  // 0000 0011
     unsigned int value2 {0x5};  // 0000 0101
@@ -77,7 +75,7 @@ export void logical_bitwise_operators(){
 }
 
 
-export void compound_bitwise_operators(){
+void compound_bitwise_operators(){
     //Compound bitwise opreators
     unsigned int sandbox_var{0b00110100};
 
@@ -111,7 +109,7 @@ export void compound_bitwise_operators(){
   	fmt::println("sandbox_var: {:032b}", sandbox_var);
 }
 
-export void masks(){
+void masks(){
     //Masks: highlight a bit of interest and turn off all the others
     unsigned int mask_bit_0 {0b00000001}; // bit 0
     unsigned int mask_bit_1 {0b00000010}; // bit 1

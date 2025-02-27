@@ -4,7 +4,7 @@
         . Packing color information.
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
 

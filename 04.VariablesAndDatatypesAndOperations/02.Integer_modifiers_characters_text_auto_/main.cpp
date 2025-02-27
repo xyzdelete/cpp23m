@@ -12,15 +12,15 @@
         . Characters and text
         . Collections of characters
             . std::vector
-            . std::array
+            .std::array
             . std::string
         . auto
 */
 
 #include <fmt/format.h>
+#include "utilities.h"
 
 // One line comment
-import utilities;
 
 int main() {
     //braced_initialization();

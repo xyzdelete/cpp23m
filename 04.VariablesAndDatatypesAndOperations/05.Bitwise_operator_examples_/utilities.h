@@ -1,20 +1,18 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 
-export module utilities; 
+inline unsigned char mask_bit_0{ 0b00000001 };// Bit0
+inline unsigned char mask_bit_1{ 0b00000010 };// Bit1
+inline unsigned char mask_bit_2{ 0b00000100 };// Bit2
+inline unsigned char mask_bit_3{ 0b00001000 };// Bit3
+inline unsigned char mask_bit_4{ 0b00010000 };// Bit4
+inline unsigned char mask_bit_5{ 0b00100000 };// Bit5
+inline unsigned char mask_bit_6{ 0b01000000 };// Bit6
+inline unsigned char mask_bit_7{ 0b10000000 };// Bit7
 
-export unsigned char mask_bit_0{ 0b00000001 };// Bit0
-export unsigned char mask_bit_1{ 0b00000010 };// Bit1
-export unsigned char mask_bit_2{ 0b00000100 };// Bit2
-export unsigned char mask_bit_3{ 0b00001000 };// Bit3
-export unsigned char mask_bit_4{ 0b00010000 };// Bit4
-export unsigned char mask_bit_5{ 0b00100000 };// Bit5
-export unsigned char mask_bit_6{ 0b01000000 };// Bit6
-export unsigned char mask_bit_7{ 0b10000000 };// Bit7
-
-export void use_options_v0(bool flag0, bool flag1, bool flag2, bool flag3, 
-                                    bool flag4, bool flag5, bool flag6, bool flag7)
+inline void use_options_v0(bool flag0, bool flag1, bool flag2, bool flag3, 
+                                  bool flag4, bool flag5, bool flag6, bool flag7)
 {
   fmt::println("Flag0 is : {}, do something with it.", flag0);
   fmt::println("Flag1 is : {}, do something with it.", flag1);
@@ -27,7 +25,7 @@ export void use_options_v0(bool flag0, bool flag1, bool flag2, bool flag3,
 }
 
 
-export void use_options_v1(unsigned char flags)
+inline void use_options_v1(unsigned char flags)
 {
   fmt::println("bit0 is : {}, do something with it!", ((flags & mask_bit_0) >> 0));
   fmt::println("bit1 is: {}, do something with it! ", ((flags & mask_bit_1) >> 1));
@@ -39,7 +37,7 @@ export void use_options_v1(unsigned char flags)
   fmt::println("bit7 is: {}, do something with it! ", ((flags & mask_bit_7) >> 7));
 }
 
-export void pack_color_information(){
+inline void pack_color_information(){
     unsigned int red_mask{ 0xFF000000 };
     unsigned int green_mask{ 0x00FF0000 };
     unsigned int blue_mask{ 0x0000FF00 };
@@ -54,5 +52,4 @@ export void pack_color_information(){
     fmt::println("Green is: {0:d}", ((my_color & green_mask) >> 16));
     fmt::println("Blue is: {0:d}", ((my_color & blue_mask) >> 8));
     fmt::println("Alpha is: {0:d}", ((my_color & alpha_mask) >> 0));
-
 }

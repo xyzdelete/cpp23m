@@ -3,9 +3,9 @@
 */
 
 #include <fmt/format.h>
+#include "utilities.h"
 
 // One line comment
-import utilities;
 
 int main() {
 
@@ -14,6 +14,5 @@ int main() {
     //floating_point_types();
 
     numeric_limits();
-
 
 }

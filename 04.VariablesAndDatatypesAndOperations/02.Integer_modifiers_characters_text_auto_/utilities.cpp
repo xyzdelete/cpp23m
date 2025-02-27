@@ -1,14 +1,6 @@
-module;
+#include "utilities.h"
 
-#include <fmt/format.h>
-#include <vector>
-#include <array>
-#include <string>
-
-export module utilities; 
-
-
-export void braced_initialization(){
+void braced_initialization(){
     //Braced initialization
     int elephant_count; // Not explicitly initialized
 
@@ -29,11 +21,9 @@ export void braced_initialization(){
     fmt::println("Dog count: {}", dog_count);
     fmt::println("Cat count: {}", cat_count);
     fmt::println("Domesticated animals: {}", domesticated_animals);
-
 }
 
-
-export void functional_initialization(){
+void functional_initialization(){
     //Functional initialization (With parentheses)
     int apple_count(5);
     int orange_count(10);
@@ -48,11 +38,9 @@ export void functional_initialization(){
     fmt::println("Orange count : {}", orange_count);
     fmt::println("Fruit count : {}", fruit_count);
     fmt::println("Narrowing conversion : {}", narrowing_conversion_functional);//Will lose info
-
 }
 
-
-export void assignment_initialization(){
+void assignment_initialization(){
     //Assignment initialization
     int bike_count = 2;
     int truck_count = 7;
@@ -69,8 +57,7 @@ export void assignment_initialization(){
     fmt::println("sizeof truck_count: {}", sizeof(truck_count));
 }
 
-
-export void integer_modifiers(){
+void integer_modifiers(){
     //Signed and unsigned modifiers
     signed int value1 {10}; // both negative and positive values
     signed int value2 {-20};
@@ -123,8 +110,7 @@ export void integer_modifiers(){
     fmt::println("---------------------");
 }
 
-
-export void floating_point_numbers(){
+void floating_point_numbers(){
     //Fractional numbers
     float number1{ 1.12345678901234567890f };// Precision : 7
     double number2{ 1.12345678901234567890 };// Precision : 15
@@ -155,7 +141,7 @@ export void floating_point_numbers(){
     fmt::println("number9 is : {}", number9);
 }
 
-export void infinity_nan(){
+void infinity_nan(){
     //Infinity and NaN
     double number10 {-5.6};
     double number11 {0}; // Initialized to 0
@@ -172,7 +158,7 @@ export void infinity_nan(){
     fmt::println("{} / {} = {}", number11, number12, result);
 }
 
-export void bool_type(){
+void bool_type(){
     //Booleans
     bool red_light {false};
     bool green_light {true};
@@ -196,8 +182,7 @@ export void bool_type(){
     fmt::println("Green light: {}", green_light);
 }
 
-
-export void characters_and_text(){
+void characters_and_text(){
     //Characters and text
     char character1 {'a'};
     char character2 {'r'};
@@ -216,8 +201,7 @@ export void characters_and_text(){
     fmt::println("value(int): {}", static_cast<unsigned int>(value));
 }
 
-
-export void collections_of_characters(){
+void collections_of_characters(){
     //Collections of characters
     //std::vector<char> characters {'a', 'r', 'r', 'o', 'w'};
     //std::array<char,5> charactes {'a','r','r','o','w'};
@@ -237,7 +221,7 @@ export void collections_of_characters(){
     fmt::println("Greeting: {}", greeting);
 }
 
-export void auto_keyword(){
+void auto_keyword(){
     //Auto keyword
     auto var1 { 12 };
     auto var2 { 13.0 };
@@ -251,11 +235,11 @@ export void auto_keyword(){
     auto var8 { 123ll }; // long long
 
     fmt::println("var1 occupies : {} bytes", sizeof(var1));
-  	fmt::println("var2 occupies : {} bytes", sizeof(var2));
-  	fmt::println("var3 occupies : {} bytes", sizeof(var3));
-  	fmt::println("var4 occupies : {} bytes", sizeof(var4));
-  	fmt::println("var5 occupies : {} bytes", sizeof(var5));
-  	fmt::println("var6 occupies : {} bytes", sizeof(var6));
-  	fmt::println("var7 occupies : {} bytes", sizeof(var7));
-  	fmt::println("var8 occupies : {} bytes", sizeof(var8));
+    fmt::println("var2 occupies : {} bytes", sizeof(var2));
+    fmt::println("var3 occupies : {} bytes", sizeof(var3));
+    fmt::println("var4 occupies : {} bytes", sizeof(var4));
+    fmt::println("var5 occupies : {} bytes", sizeof(var5));
+    fmt::println("var6 occupies : {} bytes", sizeof(var6));
+    fmt::println("var7 occupies : {} bytes", sizeof(var7));
+    fmt::println("var8 occupies : {} bytes", sizeof(var8));
 }

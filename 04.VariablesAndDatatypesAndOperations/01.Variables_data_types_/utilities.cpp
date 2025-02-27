@@ -1,10 +1,8 @@
-module;
-
+#include "utilities.h"
 #include <fmt/format.h>
+#include <limits>
 
-export module utilities; 
-
-export void number_systems(){
+void number_systems(){
     //Integers and number systems
     int number1 =  15; // Decimal
     int number2 = 017;  // Octal
@@ -17,7 +15,7 @@ export void number_systems(){
     fmt::println("number4: {}", number4);
 }
 
-export void floating_point_types(){
+void floating_point_types(){
     // Floating point types
     // floats offer 7 digits of precision while double offers 15 digits of precision.
     // long double offers 18 digits of precision
@@ -42,10 +40,9 @@ export void floating_point_types(){
     fmt::println("Size of float: {} bytes", sizeof(float));
     fmt::println("Size of double: {} bytes", sizeof(double));
     fmt::println("Size of long double: {} bytes", sizeof(long double));
-
 }
 
-export void numeric_limits(){
+void numeric_limits(){
     fmt::println("The range for int is from {} to {}", 
                                     std::numeric_limits<int>::min(),
                                     std::numeric_limits<int>::max());
@@ -60,5 +57,4 @@ export void numeric_limits(){
     fmt::println("The range for long double is from {} to {}", 
                                     std::numeric_limits<long double>::min(),
                                     std::numeric_limits<long double>::max());
-
 }
