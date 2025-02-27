@@ -1,11 +1,9 @@
-module;
+#pragma once
 
 #include <array>
 #include <fmt/format.h>
 
-export module utilities; 
-
-export void setup_and_visit(){
+void setup_and_visit(){
     std::array<int,5> arr {1, 2, 3, 4, 5};
 
     //Access the elements using the [] syntax
@@ -29,7 +27,7 @@ export void setup_and_visit(){
 }
 
 
-export void modifications(){
+void modifications(){
     //Modifying elements
     std::array<int,5> arr {1, 2, 3, 4, 5};
 
@@ -44,7 +42,7 @@ export void modifications(){
 }
 
 
-export void fill_with_data(){
+void fill_with_data(){
     //Filling an array with a value
 	std::array<int, 5> arr; // Array initialized with junk values
 
@@ -57,7 +55,7 @@ export void fill_with_data(){
 }
 
 
-export void front_and_back(){
+void front_and_back(){
     //Front and back functions
     std::array<int, 5> arr {1, 2, 3, 4, 5};
     fmt::println("First element: {}", arr.front());
@@ -65,7 +63,7 @@ export void front_and_back(){
 }
 
 
-export  void two_dimensional_data(){
+void two_dimensional_data(){
 
     //Multi-dimensional data
     std::array< std::array<int, 2>, 3> arr = {
@@ -85,7 +83,7 @@ export  void two_dimensional_data(){
 }
 
 
-export void comparing_std_array(){
+void comparing_std_array(){
     //7. Comparing arrays
 	std::array<int, 3> arr1 = {1, 2, 3};
     std::array<int, 3> arr2 = {1, 2, 3};
@@ -132,7 +130,7 @@ export void comparing_std_array(){
 }
 
 
-export void assigning_std_array(){
+void assigning_std_array(){
     //Assigning one array to another
     std::array<int, 5> arr1 = {1, 2, 3, 4, 5};
     std::array<int, 5> arr2 = {6, 7, 8, 9, 10};

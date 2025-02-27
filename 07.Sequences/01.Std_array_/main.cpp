@@ -19,8 +19,7 @@
 
 #include <array>
 #include <fmt/format.h>
-
-import utilities;
+#include "utilities.h"
 
 int main(){
     //setup_and_visit();
@@ -29,6 +28,6 @@ int main(){
     //front_and_back();
     //two_dimensional_data();
     //comparing_std_array();
-    //assigning_std_array();
+    assigning_std_array();
 
 }

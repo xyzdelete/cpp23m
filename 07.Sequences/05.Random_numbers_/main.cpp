@@ -8,8 +8,7 @@
 #include <fmt/format.h>
 #include <iostream>
 #include <random>
-
-import utilities;
+#include "utilities.h"
 
 int main(){
     //random_num_old_style();

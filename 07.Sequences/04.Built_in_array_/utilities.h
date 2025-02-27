@@ -1,12 +1,9 @@
-module;
+#pragma once
 
 #include <string>
 #include <fmt/format.h>
 
-export module utilities; 
-
-
-export void declaration_and_initialization(){
+void declaration_and_initialization(){
     //Declare and initialize an array
     //constexpr size_t array_size {5};
 
@@ -87,7 +84,7 @@ export void declaration_and_initialization(){
     fmt::println("Score sum: {}", sum);
 }
 
-export void size_of_an_array(){
+void size_of_an_array(){
     //Size of an array
     int scores[]{ 1, 2, 5 };
     //int count{ std::size(scores) };// std::size( C++17)
@@ -106,7 +103,7 @@ export void size_of_an_array(){
 }
 
 
-export void arrays_of_characters(){
+void arrays_of_characters(){
     //Arrays of characters
     //char message[5] {'H', 'e', 'l', 'l', 'o'}; // No space for null terminator. BAD. May crash your program
     char message[6] {'H', 'e', 'l', 'l', 'o', '\0'}; //The null terminator is there. GOOD
@@ -146,7 +143,7 @@ export void arrays_of_characters(){
 }
 
 
-export void array_bounds(){
+void array_bounds(){
     //Array bounds
     int numbers[10] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     // Read beyond bounds : May read garbage or crash your program

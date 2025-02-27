@@ -7,8 +7,7 @@
 #include <string>
 #include <random>
 #include <iostream>
-
-import utilities;
+#include "utilities.h"
 
 int main(){
     //fortune_teller_good();

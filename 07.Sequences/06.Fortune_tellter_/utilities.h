@@ -1,4 +1,4 @@
-module;
+#pragma once
 
 #include <string>
 #include <fmt/format.h>
@@ -8,10 +8,8 @@ module;
 #include <vector>
 #include <iostream>
 
-export module utilities; 
 
-
-export void fortune_teller_good(){
+void fortune_teller_good(){
 
     std::vector<std::string> predictions{
         "a lot of kinds running in the backyard!",
@@ -58,7 +56,7 @@ export void fortune_teller_good(){
 }
 
 
-export void fortune_teller_bad(){
+void fortune_teller_bad(){
      // srand() has to run once per program run
     std::srand(std::time(0));// Seed
 

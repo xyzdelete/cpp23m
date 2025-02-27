@@ -1,4 +1,4 @@
-module;
+#pragma once
 
 #include <string>
 #include <fmt/format.h>
@@ -7,10 +7,7 @@ module;
 #include <random>
 #include <vector>
 
-export module utilities; 
-
-
-export void random_num_old_style(){
+void random_num_old_style(){
     std::srand(std::time(nullptr)); // use current time as seed for random generator
 
     //The basics
@@ -40,7 +37,7 @@ export void random_num_old_style(){
 }
 
 
-export void random_num_modern_cpp(){
+void random_num_modern_cpp(){
     // Random numbers ( C++17 )
     std::random_device rd;  // Provides seeds with less predictability
     std::mt19937 marsenne{ rd() };  // Initialize our mersenne twister with a random seed
@@ -54,7 +51,7 @@ export void random_num_modern_cpp(){
     }
 }
 
-export void random_num_example(){
+void random_num_example(){
     //Random number example
     std::vector<std::string> predictions { 
             "a lot of kids running in the backyard!",

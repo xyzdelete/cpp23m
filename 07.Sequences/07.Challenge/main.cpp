@@ -18,7 +18,7 @@
                 . Task: Store a predefined sequence of colors in a built-in array, and cycle through them 
                 each time a specific key (e.g., space bar) is pressed to change the shape's fill color.
                 . Hint: Use a built-in array like sf::Color colors[4] to store the color sequence and manage the index.
-                . Objective: Get familiar with accessing data in built-in arrays and manipulating the shape’s color.
+                . Objective: Get familiar with accessing data in built-in arrays and manipulating the shape's color.
 
               4. Animate Multiple Shapes with Timers
                 . Task: Create multiple shapes (using std::vector or std::array) and move them both horizontally and vertically across the window . 
@@ -31,8 +31,7 @@
 */
 
 #include <fmt/format.h>
-
-import utilities;
+#include "utilities.h"
 
 int main(){
 

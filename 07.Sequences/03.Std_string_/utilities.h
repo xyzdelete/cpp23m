@@ -1,12 +1,9 @@
-module;
+#pragma once
 
 #include <string>
 #include <fmt/format.h>
 
-export module utilities; 
-
-
-export void declare_and_initialize(){
+void declare_and_initialize(){
     // Basic Declaration and Initialization
     // Declaring a std::string and initializing it with a literal
     std::string str1 = "Hello, World!";
@@ -14,7 +11,7 @@ export void declare_and_initialize(){
 }
 
 
-export void construction(){
+void construction(){
     //Using Constructors
     // Creating a std::string using various constructors
     std::string str1 {"Hello world"};
@@ -26,7 +23,7 @@ export void construction(){
     fmt::println("str4: {}", str4);
 }
 
-export void access_and_modify(){
+void access_and_modify(){
     //Accessing Characters
     // Accessing individual characters using the [] operator and at() method
     std::string str1 {"Hello world!"};
@@ -41,7 +38,7 @@ export void access_and_modify(){
 
 }
 
-export void appending_and_concatenation(){
+void appending_and_concatenation(){
     //Appending and Concatenation
     //Appending to a string using operator+= and append()
     std::string str1 {"Hello world!"};
@@ -58,7 +55,7 @@ export void appending_and_concatenation(){
 }
 
 
-export void substrings_and_finding(){
+void substrings_and_finding(){
     //Substrings
     // Extracting a substring using substr()
     std::string str1 {"Hello world"};
@@ -76,7 +73,7 @@ export void substrings_and_finding(){
 }
 
 
-export void comparison(){
+void comparison(){
     // Comparison
     // Comparing strings using compare()
     std::string str1 {"Hello"};
@@ -95,7 +92,7 @@ export void comparison(){
 }
 
 
-export void inserting_and_erasing(){
+void inserting_and_erasing(){
     //Inserting and Erasing
     //Inserting a substring into a string
     std::string str1 {"Hello world"};
@@ -108,7 +105,7 @@ export void inserting_and_erasing(){
 }
 
 
-export void length_capacity_clear(){
+void length_capacity_clear(){
     //Length and Capacity
     // Getting the length and capacity of a string
     std::string str1{"Hello world!"};

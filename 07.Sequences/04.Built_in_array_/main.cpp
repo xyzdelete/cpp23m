@@ -13,14 +13,13 @@
 
 #include <string> 
 #include <fmt/format.h>
-
-import utilities;
+#include "utilities.h"
 
 int main(){
 
     //declaration_and_initialization();
     //size_of_an_array();
     //arrays_of_characters();
-    //array_bounds();
+    array_bounds();
 
 }

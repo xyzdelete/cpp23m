@@ -1,4 +1,4 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <SFML/Graphics.hpp>
@@ -6,8 +6,6 @@ module;
 #include <vector>
 #include <array>
 #include <random>
-
-export module utilities; 
 
 /*
     1. Store Multiple Shapes Using Containers
@@ -17,7 +15,7 @@ export module utilities;
         .  Objective: Students should get used to working with dynamic containers like std::vector.
 */
 namespace it_1{
-    export void app(){
+    void app(){
         //Store data in pre-defined variable
         constexpr int width {200};
         constexpr int height {200};
@@ -107,7 +105,7 @@ namespace it_1{
 */
 namespace it_2{
 
-    export void app(){
+    void app(){
         //Store data in pre-defined variable
         constexpr int width {200};
         constexpr int height {200};
@@ -229,12 +227,12 @@ namespace it_2{
                 . Task: Store a predefined sequence of colors in a built-in array, and cycle through them 
                 each time a specific key (e.g., space bar) is pressed to change the shape's fill color.
                 . Hint: Use a built-in array like sf::Color colors[4] to store the color sequence and manage the index.
-                . Objective: Get familiar with accessing data in built-in arrays and manipulating the shape’s color.
+                . Objective: Get familiar with accessing data in built-in arrays and manipulating the shape's color.
 */
 
 namespace it_3{
 
-    export void app(){
+    void app(){
         //Store data in pre-defined variable
         constexpr int width {200};
         constexpr int height {200};
@@ -309,7 +307,7 @@ namespace it_3{
 
 */
 namespace it_4{
-    export void app(){
+    void app(){
         //Store data in pre-defined variable
         constexpr int width {600};
         constexpr int height {600};
@@ -400,7 +398,7 @@ namespace it_4{
 */
 namespace it_5{
 
-    export void app(){
+    void app(){
         //Store data in pre-defined variable
         constexpr int width {600};
         constexpr int height {600};
