@@ -1,11 +1,9 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <vector>
 
-export module utilities; 
-
-export void for_loop(){
+void for_loop(){
     //Print I love C++ 10 times: The bad way to do things
     /*
     fmt::println( "I love C++" );
@@ -113,7 +111,7 @@ export void for_loop(){
 }
 
 
-export void while_loop(){
+void while_loop(){
     //While loops
     /*
     constexpr size_t COUNT {100};   // count stored in a variable
@@ -140,7 +138,7 @@ export void while_loop(){
 }
 
 
-export void infinite_loop(){
+void infinite_loop(){
     //Infininte loops
     // Infinite loop : for loop
     /*
@@ -170,7 +168,7 @@ export void infinite_loop(){
     */
 }
 
-export void decrementing_loops(){
+void decrementing_loops(){
     //Decrementing loops
     /*
     constexpr size_t COUNT{5};
@@ -191,7 +189,7 @@ export void decrementing_loops(){
 }
 
 
-export void break_continue(){
+void break_continue(){
     //Break and continue
 
     // break and continue : for loops

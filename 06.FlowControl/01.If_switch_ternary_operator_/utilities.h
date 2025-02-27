@@ -1,8 +1,6 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
-
-export module utilities; 
 
 // Tools
 constexpr int Pen{ 10 };
@@ -58,7 +56,7 @@ void handle_color(int color) {
     }
 }
 
-export void if_statement(){
+void if_statement(){
     //If statements
     int number1  {75};
     int number2 {60};
@@ -171,7 +169,7 @@ export void if_statement(){
 }
 
 
-export void switch_statement(){
+void switch_statement(){
     //Switch statement
     /*
     int tool { Pen};
@@ -230,7 +228,7 @@ export void switch_statement(){
 	}
 }
 
-export void short_circuit_evaluations(){
+void short_circuit_evaluations(){
     //Short circuit evaluations
     /*
     bool a{ false };
@@ -269,7 +267,7 @@ export void short_circuit_evaluations(){
     }
 }
 
-export void ternary_operator(){
+void ternary_operator(){
     //Ternary operator
     int max{};
     
@@ -286,7 +284,7 @@ export void ternary_operator(){
     fmt::println("max :{} ", max);
 }
 
-export void std_unreachable(){
+void std_unreachable(){
     //std::unreachable
     handle_color(Red);
     handle_color(Green);
