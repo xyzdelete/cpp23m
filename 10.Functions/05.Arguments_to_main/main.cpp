@@ -6,8 +6,7 @@
 */
 
 #include <fmt/format.h>
-
-import utilities;
+#include "utilities.h"
 
 int main(int argc, char* argv[]){
 

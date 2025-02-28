@@ -1,10 +1,10 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
+#include <cstring>
+#include <cstdlib>
 
-export module utilities; 
-
-export void process_arguments(int argc, char* argv[]){
+void process_arguments(int argc, char* argv[]) {
     fmt::println("number of arguments: {}", argc);
 
     for(size_t i{0}; i < argc; ++i){
@@ -12,9 +12,7 @@ export void process_arguments(int argc, char* argv[]){
     }   
 }
 
-
-export void calculator(int argc, char* argv[]){
-
+void calculator(int argc, char* argv[]) {
     //Check the number of arguments
     if(argc != 4){
         fmt::println("Program can only be called with 3 arguments like: ");
@@ -71,5 +69,4 @@ export void calculator(int argc, char* argv[]){
 
 		break;
 	}
-
 }
