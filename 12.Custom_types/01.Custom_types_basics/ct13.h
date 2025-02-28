@@ -1,23 +1,21 @@
 /*
     . Introducing the copy assignment operator
 */
-module;
+#pragma once
 
 #include <cstdint>
 #include <fmt/format.h>
 #include <memory>
 
-export module ct13;
-
 namespace ct13
 {
 
-    export struct Position {
+    struct Position {
         unsigned int x{0};
         unsigned int y{0};
     };
 
-    export class Pixel {
+    class Pixel {
     public:
         Pixel() = default;
         Pixel(uint32_t color, unsigned int x, unsigned int y);

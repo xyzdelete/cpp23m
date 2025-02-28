@@ -6,7 +6,7 @@
             . RECOMENDATION: 
                 . Use specialized file I/O Libraries for serialization tasks like these.
 */
-module;
+#pragma once
 
 #include <cstdint>
 #include <filesystem>
@@ -14,13 +14,11 @@ module;
 #include <vector>
 #include <fmt/format.h>
 
-export module ct16;
-
 namespace ct16
 {
 
-        // Position struct definition
-    export struct Position {
+    // Position struct definition
+    struct Position {
         unsigned int x{0};
         unsigned int y{0};
 
@@ -29,7 +27,7 @@ namespace ct16
     };
 
     //Pixel class definition
-    export class Pixel{
+    class Pixel{
 
     public:
         Pixel() = default;
@@ -64,7 +62,7 @@ namespace ct16
 
     };
 
-    export void save_pixels(const std::vector<Pixel>& pixels, const std::filesystem::path& filepath) {
+    void save_pixels(const std::vector<Pixel>& pixels, const std::filesystem::path& filepath) {
         std::ofstream out(filepath, std::ios::binary);
         if (!out) {
             fmt::println("Error opening file for writing: {}", filepath.string());
@@ -76,7 +74,7 @@ namespace ct16
     }
 
 
-    export std::vector<Pixel> load_pixels(const std::filesystem::path& filepath) {
+    std::vector<Pixel> load_pixels(const std::filesystem::path& filepath) {
         std::vector<Pixel> pixels;
         std::ifstream in(filepath, std::ios::binary);
         if (!in) {
@@ -91,5 +89,4 @@ namespace ct16
         }
         return pixels;
     } 
-    
 } // namespace ct16

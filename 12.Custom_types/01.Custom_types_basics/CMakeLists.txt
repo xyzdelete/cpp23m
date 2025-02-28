@@ -17,10 +17,28 @@ find_package(fmt CONFIG REQUIRED)
 # Add the executable target
 add_executable(Rocket 
     main.cpp 
+    ct1.h 
+    ct2.h
+    ct3.h
     ct3.cpp 
+    ct4.h
     ct4.cpp
+    ct5.h
     ct5.cpp
+    ct6.h
     ct6.cpp
+    ct7.h
+    ct8.h
+    ct9.h
+    ct10.h 
+    ct11.h
+    ct12.h
+    ct13.h
+    ct14.h
+    ct15.h
+    ct16.h
+    ct17.h
+    utilities.h 
 )
 
 # Add header files - set up source dir as an include dir
@@ -30,12 +48,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_sources(${PROJECT_NAME}
     PUBLIC
     FILE_SET CXX_MODULES FILES
-    utilities.ixx
-    ct13.ixx
-    ct14.ixx
-    ct15.ixx
-    ct16.ixx
-    ct17.ixx
 )
 
 #Add include directories

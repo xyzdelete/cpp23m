@@ -27,23 +27,21 @@
 
 
 */
-module;
+#pragma once
 
 #include <cstdint>
 #include <memory>
 #include <fmt/format.h>
 
-export module ct14;
-
 namespace ct14
 {
 
-    export struct Position {
+    struct Position {
         unsigned int x{0};
         unsigned int y{0};
     };
 
-    export class Pixel {
+    class Pixel {
     public:
         Pixel() = default;
         Pixel(uint32_t color, unsigned int x, unsigned int y);

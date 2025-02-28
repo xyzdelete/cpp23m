@@ -3,25 +3,22 @@
         . POD (Plain Object Data) types
         . Non-POD types
 */
-
-module;
+#pragma once
 
 #include <fstream>
 #include <filesystem>
 #include <fmt/format.h>
 
-export module ct15;
-
 namespace pod_types
 {
-    export struct PODType {
+    struct PODType {
         int id;
         double value;
     };
 
 
     // Function to write POD to a binary file (returns bool for success)
-    export bool write_pod(const std::filesystem::path& filename, const PODType& pod) {
+    bool write_pod(const std::filesystem::path& filename, const PODType& pod) {
         std::ofstream out_file(filename, std::ios::binary);
         if (!out_file) {
             return false;
@@ -32,7 +29,7 @@ namespace pod_types
 
 
     // Function to read POD from a binary file (returns bool for success)
-    export bool read_pod(const std::filesystem::path& filename, PODType& pod) {
+    bool read_pod(const std::filesystem::path& filename, PODType& pod) {
         std::ifstream in_file(filename, std::ios::binary);
         if (!in_file) {
             return false;
@@ -43,7 +40,7 @@ namespace pod_types
 
 
     // Function to write a vector of PODType objects to a file
-    export bool write_pod_vector(const std::filesystem::path& file_path,
+    bool write_pod_vector(const std::filesystem::path& file_path,
                             const std::vector<pod_types::PODType>& pod_vector) {
         std::ofstream out_file(file_path, std::ios::binary);
         if (!out_file) {
@@ -65,7 +62,7 @@ namespace pod_types
     }
 
     // Function to read a vector of PODType objects from a file
-    export bool read_pod_vector(const std::filesystem::path& file_path,
+    bool read_pod_vector(const std::filesystem::path& file_path,
                                     std::vector<pod_types::PODType>& pod_vector) {
         std::ifstream in_file(file_path, std::ios::binary);
         if (!in_file) {
@@ -86,13 +83,12 @@ namespace pod_types
         in_file.close();
         return true;
     }
-    
 } // namespace  pod_types
 
 
 namespace non_pod_types
 {
-    export class Person {
+    class Person {
     public:
         std::string name;
         int age;
@@ -119,7 +115,7 @@ namespace non_pod_types
     };
 
     // Function to write a vector of person objects to a file
-    export void write_persons_to_file(const std::vector<Person>& persons, const std::filesystem::path& file_path) {
+    void write_persons_to_file(const std::vector<Person>& persons, const std::filesystem::path& file_path) {
         std::ofstream ofs(file_path, std::ios::binary);
         if (!ofs) {
             fmt::println("Failed to open file for writing: {}", file_path.string());
@@ -138,7 +134,7 @@ namespace non_pod_types
 
 
     // Function to read a vector of person objects from a file
-    export std::vector<Person> read_persons_from_file(const std::filesystem::path& file_path) {
+    std::vector<Person> read_persons_from_file(const std::filesystem::path& file_path) {
         std::ifstream ifs(file_path, std::ios::binary);
         if (!ifs) {
             fmt::println("Failed to open file for reading: {}", file_path.string());
@@ -156,6 +152,5 @@ namespace non_pod_types
         fmt::println("Deserialized {} person(s) from file: {}", vector_size, file_path.string());
         return persons;
     }
-    
 } // namespace non_pod_types
 

@@ -1,4 +1,4 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <memory>
@@ -13,20 +13,17 @@ module;
 #include "ct7.h"
 #include "ct8.h"
 #include "ct9.h"
-#include "ct10.h" // Changed from import to include
-#include "ct11.h" // Changed from import to include
-#include "ct12.h" // Changed from import to include
+#include "ct10.h" 
+#include "ct11.h" 
+#include "ct12.h" 
+#include "ct13.h"
+#include "ct14.h"
+#include "ct15.h"
+#include "ct16.h"
+#include "ct17.h"
 
-export module utilities; 
 
-// These remain as module imports
-import ct13;
-import ct14;
-import ct15;
-import ct16;
-import ct17;
-
-export void ct1_demo(){
+void ct1_demo(){
     /*
 		. {:#010x} is a format specifier that will print the hex value with 10 digits and 0 padding.
 		. #  indicates that the output should include the 0x prefix for hexadecimal numbers.
@@ -48,7 +45,7 @@ export void ct1_demo(){
 }
 
 
-export void ct2_demo(){
+void ct2_demo(){
 
     ct2::Pixel p;
     //ct2::Pixel p{0xff00ff, 100, 200};
@@ -76,7 +73,7 @@ export void ct2_demo(){
 
 }
 
-export void ct3_demo(){
+void ct3_demo(){
 
     ct3::Pixel p;
     //ct2::Pixel p{0xff00ff, 100, 200};
@@ -104,7 +101,7 @@ export void ct3_demo(){
 
 }
 
-export void ct4_demo(){
+void ct4_demo(){
 
     ct4::Pixel p;
     //ct2::Pixel p{0xff00ff, 100, 200};
@@ -133,7 +130,7 @@ export void ct4_demo(){
 }
 
 
-export void ct5_demo(){
+void ct5_demo(){
     /*
     ct5::Pixel p;
 
@@ -157,7 +154,7 @@ export void ct5_demo(){
 }
 
 
-export void ct6_demo(){
+void ct6_demo(){
  	//Use the default constructor
 	ct6::Pixel p;
 
@@ -180,7 +177,7 @@ export void ct6_demo(){
 }
 
 
-export void ct7_demo(){
+void ct7_demo(){
 
     ct7::Pixel p(0x00FF00FF, ct7::Position{10,20}, 0x00FF00FF);
 
@@ -192,7 +189,7 @@ export void ct7_demo(){
 }
 
 
-export void ct8_demo(){
+void ct8_demo(){
 
 	ct8::Pixel p1(0x00FF00FF, 10, 20);
 	ct8::Pixel p2 = p1;	//This how we create a copy.
@@ -217,7 +214,7 @@ ct9::Pixel create_pixel() {
     return p;  // Copy constructor may be invoked here (but likely optimized out)
 }
 
-export void ct9_demo(){
+void ct9_demo(){
 
  	/*
 	ct9::Pixel p1(0x00FF00FF, 10, 20);
@@ -263,7 +260,7 @@ export void ct9_demo(){
 }
 
 
-export void ct10_demo(){
+void ct10_demo(){
 	//ct10::Pixel p1;                    // Uses default constructor
 	//ct10::Pixel p2{0xFFFF0000};         // Uses color-only constructor, which delegates to the three-argument constructor
 	ct10::Pixel p3{0xFF00FF00, 100, 50}; // Directly uses the three-argument constructor
@@ -271,7 +268,7 @@ export void ct10_demo(){
 }
 
 
-export void ct11_demo(){
+void ct11_demo(){
 	uint32_t color = 0xFF00FF00;
 	ct11::Pixel p(color);
 	ct11::print_pixel(p);
@@ -280,7 +277,7 @@ export void ct11_demo(){
 	ct11::print_pixel(p1);
 }
 
-export void ct13_demo(){
+void ct13_demo(){
 	ct13::Pixel p1{0xFF00FF00, 100, 50};
 	ct13::Pixel p2{0x00FF00FF, 200, 150};
 
@@ -293,7 +290,7 @@ export void ct13_demo(){
 }
 
 
-export void ct14_demo(){
+void ct14_demo(){
 
 	ct14::Pixel p1{0xFF00FF00, 100, 50};
 	ct14::Pixel p2{0x00FF00FF, 200, 150};
@@ -315,7 +312,7 @@ export void ct14_demo(){
 }
 
 
-export void ct15_demo_pod(){
+void ct15_demo_pod(){
 
 	//Write and read a single pod
 	/*
@@ -378,7 +375,7 @@ export void ct15_demo_pod(){
 
 }
 
-export void ct15_demo_non_pod(){
+void ct15_demo_non_pod(){
 
 	std::vector<non_pod_types::Person> persons = {{"Alice", 30}, {"Bob", 25}, {"Charlie", 40}};
     std::filesystem::path file_path = R"(D:\sample_non_pod_vector.bin)"; // Windows
@@ -398,7 +395,7 @@ export void ct15_demo_non_pod(){
 }
 
 
-export void ct16_demo(){
+void ct16_demo(){
 
 	// Create a vector of Pixel objects
     std::vector<ct16::Pixel> pixels = {
@@ -427,7 +424,7 @@ export void ct16_demo(){
 }
 
 
-export void ct17_demo(){
+void ct17_demo(){
 	ct17::Pixel p1{0xFF00FF00, 100, 50};
 	ct17::Pixel p2{0x00FF00FF, 200, 150};
 
