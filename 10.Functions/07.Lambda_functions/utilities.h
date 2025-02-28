@@ -1,11 +1,9 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 
-export module utilities;
-
-//Declaring and using lambdas
-export void declare_and_use_lambda_func(){
+// Declaring and using lambdas
+void declare_and_use_lambda_func(){
     /*
 	Lambda function signature :
 								[capture list] (parameters) ->return type{
@@ -88,11 +86,10 @@ export void declare_and_use_lambda_func(){
 	fmt::println("result4 : {}", result4);
 	fmt::println("sizeof(result3) : {}", sizeof(result3));// 4
 	fmt::println("sizeof(result4) : {}", sizeof(result4));// 8
-
 }
 
 
-export void capture_lists(){
+void capture_lists(){
     //Capture lists
     double a{10};
     double b{20};
@@ -104,7 +101,7 @@ export void capture_lists(){
 }
 
 
-export void capture_by_value_modification() {
+void capture_by_value_modification() {
     int x {10};
 
     // Lambda capturing 'x' by value
@@ -117,7 +114,7 @@ export void capture_by_value_modification() {
     fmt::println("Original value after lambda: {}", x);  // Unchanged
 }
 
-export void capture_by_reference_modification() {
+void capture_by_reference_modification() {
     int x {10};
 
     // Lambda capturing 'x' by reference
@@ -132,7 +129,7 @@ export void capture_by_reference_modification() {
 }
 
 
-export void capture_all_by_value() {
+void capture_all_by_value() {
     int x {10};
     int y {20};
 
@@ -152,7 +149,7 @@ export void capture_all_by_value() {
 }
 
 
-export void capture_all_by_reference() {
+void capture_all_by_reference() {
     int x = 10;
     int y = 20;
 
