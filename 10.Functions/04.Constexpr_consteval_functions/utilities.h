@@ -1,11 +1,9 @@
-module;
-
-export module utilities;
+#pragma once 
 
 // Marking a function as constexpr gives it the potential
 // to be evaluated at compile time
 /*
-export constexpr int get_value(int multiplier) {
+constexpr int get_value(int multiplier) {
 	return 3 * multiplier; 
 }
 */
@@ -13,6 +11,6 @@ export constexpr int get_value(int multiplier) {
 
 // Evaluate this function at compile time. If you can't
 // do that throw a compiler error
-export consteval int get_value(int multiplier) {
+consteval int get_value(int multiplier) {
 	 return 3 * multiplier; 
 }
