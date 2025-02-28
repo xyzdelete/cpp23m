@@ -8,8 +8,7 @@
 
 #include <array>
 #include <fmt/format.h>
-
-import utilities;
+#include "utilities.h"
 
 //Passing array function parameters
 /*
