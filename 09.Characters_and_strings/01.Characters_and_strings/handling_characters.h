@@ -1,13 +1,11 @@
-module;
+#pragma once
 
 #include <cctype>
 #include <fmt/format.h>
 
-export module handling_characters;
-
 namespace handling_characters
 {
-    export void is_al_num(){
+    void is_al_num(){
 
         // Check if character is alphanumeric
         fmt::println( "std::isalnum : ");
@@ -24,7 +22,7 @@ namespace handling_characters
     }
 
 
-    export void is_alphabetic(){
+    void is_alphabetic(){
         // Check if character is alphabetic
         fmt::println( "std::isalpha : ");
         fmt::println(   "C is alphabetic : {}", std::isalpha('e') ); // 1
@@ -39,7 +37,7 @@ namespace handling_characters
     }
 
 
-    export void is_blank(){
+    void is_blank(){
         // Check if a character is blank
         char message[] {"Hello there. How are you doing? The sun is shining."};
         fmt::println( "message : {}", message );
@@ -56,7 +54,7 @@ namespace handling_characters
         fmt::println( "In total, we found {} blank characters.", blank_count);	
     }
 
-    export void is_upercase(){
+    void is_upercase(){
         // Check if character is lowercase or uppercase
         fmt::println( "std::islower and std::isupper : ");
         fmt::println("");
@@ -82,7 +80,7 @@ namespace handling_characters
     }
 
 
-    export void is_digit(){
+    void is_digit(){
         // Check if a character is a digit
         fmt::println("");
         fmt::println( "std::isdigit : ");
@@ -102,7 +100,7 @@ namespace handling_characters
     }
 
 
-    export void change_to_lowercase(){
+    void change_to_lowercase(){
         // Turning a character to lowercase using the std::tolower() function
         fmt::println("");
         fmt::println("std::tolwer and std::toupper: ");

@@ -1,14 +1,12 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <string>
 #include <string_view>
 
-export module string_views; 
-
 namespace string_views
 {
-    export void the_problem(){
+    void the_problem(){
 
         // Showing the problem
         std::string string {"Hello"};
@@ -22,7 +20,7 @@ namespace string_views
     }
 
 
-    export void the_solution(){
+    void the_solution(){
         // Using string_view
         std::string_view sv0{"Helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"};
         std::string_view sv1 {sv0}; // View viewing the hello literal
@@ -37,7 +35,7 @@ namespace string_views
 
     }
 
-    export void string_view_construction(){
+    void string_view_construction(){
         // Constructing string_view's
         std::string string3 {"Regular std::string"};
         const char * c_string {"Regular C-String"};
@@ -60,7 +58,7 @@ namespace string_views
     }
 
 
-    export void std_string_view_visualizes_original_string(){
+    void std_string_view_visualizes_original_string(){
         // Changes to the original string are reflected in the string_view
         char word [] {"Dog"};
         std::string_view sv9{word};
@@ -74,7 +72,7 @@ namespace string_views
         fmt::println( "word : {}" , sv9 );
     }
 
-    export void std_string_view_change_view_window(){
+    void std_string_view_change_view_window(){
 
         // Changing the view window : SHRINKING
         const char * c_string1 { "The animals have left the region" };
@@ -96,7 +94,7 @@ namespace string_views
         fmt::println( "Original sv10 viewed string : {}" , c_string1 );
     }
 
-    export void std_string_view_lifetime(){
+    void std_string_view_lifetime(){
         // String_view shouldn't outlive whatever it is viewing
         std::string_view sv11;
 
@@ -110,7 +108,7 @@ namespace string_views
     }
 
 
-    export void std_string_view_data(){
+    void std_string_view_data(){
         // data
         /*
         std::string_view sv13 {"Ticket"};
@@ -133,7 +131,7 @@ namespace string_views
     }
 
 
-    export void std_string_view_behaviors(){
+    void std_string_view_behaviors(){
         // std::string behaviors(methods) are available in string_view
         std::string_view sv16{ "There is a huge forest in that area" };
 

@@ -1,13 +1,12 @@
-module;
+#pragma once
 
 #include <string>
 #include <fmt/format.h>
 
-export module handling_std_strings;
 
 namespace handling_std_strings
 {
-    export void std_string_declaration(){
+    void std_string_declaration(){
 
         std::string full_name;// Empty string
         std::string planet{ "Earth. Where the sky is blue" };// Initialize with string literal
@@ -35,7 +34,7 @@ namespace handling_std_strings
 
     }
 
-    export void std_string_concatenation(){
+    void std_string_concatenation(){
 
         // Concatenating two strings : The + operator
         /*

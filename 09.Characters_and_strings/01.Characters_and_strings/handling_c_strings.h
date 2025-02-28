@@ -1,13 +1,11 @@
-module;
+#pragma once
 
 #include <cstring>
 #include <fmt/format.h>
 
-export module handling_c_strings;
-
 namespace handling_c_strings
 {
-        export void cstring_strlen(){
+        void cstring_strlen(){
         //std::strlen : Find the length of a string
         // real arrays and those decayed into pointers
         const char message1 [] {"The sky is blue."};
@@ -31,7 +29,7 @@ namespace handling_c_strings
     }
     
 
-    export void cstring_strcmp(){
+    void cstring_strcmp(){
 
         // std::strcmp - signature : int strcmp( const char *lhs, const char *rhs );
         // Returns negative value if lhs appears before rhs in lexicographical order,
@@ -80,7 +78,7 @@ namespace handling_c_strings
         fmt::println( "std::strcmp ({}, {}): {}", string_data1 , string_data2 , std::strcmp(string_data1, string_data2) );
     }
 
-    export void cstring_strncmp(){
+    void cstring_strncmp(){
         // std::strncmp : int strncmp( const char *lhs, const char *rhs, std::size_t count );
         // Compares n characters in the strings
         // Returns : Negative value if lhs appears before rhs in lexicographical order.

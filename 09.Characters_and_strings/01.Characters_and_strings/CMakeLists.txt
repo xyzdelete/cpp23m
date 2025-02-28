@@ -15,16 +15,17 @@ find_package(fmt CONFIG REQUIRED)
 
 #We're using the project name as the target name, but you can change it to make them different.
 #With this setup, the name of the executable will be the same as the project name.
-add_executable(${PROJECT_NAME} main.cpp)
-
-target_sources(${PROJECT_NAME}
-        PUBLIC
-        FILE_SET CXX_MODULES FILES
-        utilities.ixx
-        handling_characters.ixx
-        handling_c_strings.ixx
-        handling_std_strings.ixx
-        string_literals.ixx
-        string_views.ixx
+add_executable(${PROJECT_NAME} main.cpp
+        utilities.h
+        handling_characters.h
+        handling_c_strings.h
+        handling_std_strings.h
+        string_literals.h
+        string_views.h
 )
+
+#Add include directories
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+#Link the fmt library
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)

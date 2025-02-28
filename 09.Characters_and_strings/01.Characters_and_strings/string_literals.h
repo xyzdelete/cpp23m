@@ -1,13 +1,12 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <string>
 
-export module string_literals;
 
 namespace string_literals
 {
-    export void escape_sequences(){
+    void escape_sequences(){
 
         //New line character
         for(size_t i{0} ; i  < 10 ; ++i){
@@ -32,7 +31,7 @@ namespace string_literals
     }
 
 
-    export void raw_string_literals(){
+    void raw_string_literals(){
 
         // Use raw string literals
         /*

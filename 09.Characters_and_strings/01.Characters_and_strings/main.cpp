@@ -9,7 +9,7 @@
         . change_to_lowercase
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
 
