@@ -2,8 +2,7 @@
     . Exploring the ftxui library
 */
 
-import utilities;
-
+#include "utilities.h"
 int main(){
 
     //The basics

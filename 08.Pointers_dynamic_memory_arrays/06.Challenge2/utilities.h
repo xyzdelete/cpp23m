@@ -1,16 +1,13 @@
-module;
+#pragma once
 
 #include <ftxui/component/screen_interactive.hpp> // For ScreenInteractive
 #include <ftxui/dom/elements.hpp>                // For text, vbox, hbox
 #include <ftxui/component/component.hpp> // for Button, Horizontal, Renderer, etc.
 #include <string>
 
-export module utilities; 
-
-
 namespace ftxui_it1
 {
-    export void app(){
+    void app(){
 
         using namespace ftxui;
 
@@ -41,7 +38,7 @@ namespace ftxui_it1
 
 namespace ftxui_it2
 {
-    export void app(){
+    void app(){
         using namespace ftxui;
 
         std::string message = "Click a button!";
