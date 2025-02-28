@@ -6,8 +6,7 @@
 
 */
 
-import utilities;
-
+#include "utilities.h"
 int main(){
 
     //This is the best way to go

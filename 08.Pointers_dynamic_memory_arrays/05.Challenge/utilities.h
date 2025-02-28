@@ -1,4 +1,4 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <SFML/Graphics.hpp>
@@ -8,12 +8,10 @@ module;
 #include <random>
 #include <memory>
 
-export module utilities; 
-
 //Storing our data in an std::vector: The best way to go
 namespace dm_1
 {
-       export void app(){
+       void app(){
 
         //Store data in pre-defined variable
         constexpr int width {600};
@@ -100,7 +98,7 @@ namespace dm_1
 //Storing shapes on the heap and managing memory manually through new and delete: The worst way
 namespace dm_2
 {
-    export void app(){
+    void app(){
         //Store data in pre-defined variable
         constexpr int width {600};
         constexpr int height {600};
@@ -191,7 +189,7 @@ namespace dm_2
 //Use smart pointers to do better than raw pointers
 namespace dm_3
 {
-   export void app(){
+   void app(){
         //Store data in pre-defined variable
         constexpr int width {600};
         constexpr int height {600};
