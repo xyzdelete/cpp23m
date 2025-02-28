@@ -1,4 +1,4 @@
-module;
+#pragma once
 
 #include <cctype>
 #include <cstring>
@@ -8,8 +8,6 @@ module;
 #include <ftxui/screen/screen.hpp>      // for Screen
 #include <ftxui/component/component.hpp> // for Input, Renderer, ScreenInteractive
 #include <ftxui/component/screen_interactive.hpp> // for ScreenInteractive
-
-export module utilities; 
 
 namespace ftxui_palindrome_app
 {
@@ -45,7 +43,7 @@ namespace ftxui_palindrome_app
     }
 
 
-    export void app(){
+    void app(){
 
         using namespace ftxui;
 

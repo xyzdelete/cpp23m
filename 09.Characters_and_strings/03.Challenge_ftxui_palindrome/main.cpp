@@ -2,7 +2,7 @@
     Palindrome checker app using the ftxui library
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
 
