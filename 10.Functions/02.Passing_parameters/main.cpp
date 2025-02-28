@@ -17,8 +17,7 @@
             . They only have to show up in the declaration.
 */
 #include <fmt/format.h>
-
-import utilities;
+#include "utilities.h"
 
 //Pass by value
 /*
