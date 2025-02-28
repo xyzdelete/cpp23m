@@ -4,12 +4,12 @@
     . static variables in functions
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
 
     //attributes_demo();
     //static_vars_demo();
-    //recursion_demo();
+    recursion_demo();
     
 }

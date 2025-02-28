@@ -1,14 +1,11 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
+#include "attributes.h"
+#include "static_vars.h"
+#include "recursion.h"
 
-export module utilities;
-
-import attributes;
-import static_vars;
-import recursion;
-
-export void attributes_demo(){
+void attributes_demo(){
 
     //[[noretun]] 
     /*
@@ -51,13 +48,13 @@ export void attributes_demo(){
     //attributes::compute_important_value();
 }
 
-export void static_vars_demo(){
+void static_vars_demo(){
     static_vars::user_login();
     static_vars::user_login();
     static_vars::user_login();
 }
 
-export void recursion_demo(){
+void recursion_demo(){
     auto value = recursion::fibonacci(7);
     fmt::println("value: {}", value);
 
