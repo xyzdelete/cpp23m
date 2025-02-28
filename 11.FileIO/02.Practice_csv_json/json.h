@@ -1,15 +1,12 @@
-module;
+#pragma once
 
 #include <filesystem>
 #include <fstream>
 #include <fmt/format.h>
 
-export module json;
-
 namespace json
 {
-
-    export void write_json(const std::filesystem::path& file_path) {
+    void write_json(const std::filesystem::path& file_path) {
         // Create a JSON file with some data
         std::ofstream json_file(file_path, std::ios::out);
         if (!json_file) {
@@ -29,7 +26,7 @@ namespace json
         fmt::println("JSON file written successfully to: {}", file_path.string());
     }
 
-    export void read_json(const std::filesystem::path& file_path) {
+    void read_json(const std::filesystem::path& file_path) {
         // Check if the file exists using std::filesystem
         if (!std::filesystem::exists(file_path)) {
             fmt::println("File does not exist: {}", file_path.string());

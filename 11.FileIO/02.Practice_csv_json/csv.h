@@ -1,14 +1,12 @@
-module;
+#pragma once
 
 #include <filesystem>
 #include <fstream>
 #include <fmt/format.h>
 
-export module csv;
-
 namespace csv
 {
-    export void write_csv(const std::filesystem::path& file_path) {
+    void write_csv(const std::filesystem::path& file_path) {
         // Create a CSV file with some data
         std::ofstream csv_file(file_path, std::ios::out);
         if (!csv_file) {
@@ -26,7 +24,7 @@ namespace csv
     }
 
 
-    export void read_csv(const std::filesystem::path& file_path) {
+    void read_csv(const std::filesystem::path& file_path) {
         // Check if the file exists using std::filesystem
         if (!std::filesystem::exists(file_path)) {
             fmt::println("File does not exist: {}", file_path.string());
