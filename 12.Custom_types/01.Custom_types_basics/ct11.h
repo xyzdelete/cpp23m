@@ -1,3 +1,5 @@
+#pragma once
+
 /*
     . Exploring the use of the explicit keyword to prevent implicit conversions from constructors.
     . We don't want the compiler to convert a uint32_t to a Pixel object.
@@ -8,16 +10,13 @@
     . explicit(true) is the same as explicit
     . You can explicitly allow implicit conversions by using the explicit(false) keyword.
 */
-module;
 
 #include <cstdint>
 #include <fmt/format.h>
 
-export module ct11;
-
 namespace ct11
 {
-    export class Pixel {
+    class Pixel {
     public:
         // Default constructor
         Pixel() = default;
@@ -59,7 +58,8 @@ namespace ct11
     };  
 
     //Function that takes a Pixel object
-    export void print_pixel(const Pixel& p){
+    void print_pixel(const Pixel& p){
         fmt::print("Pixel: color = 0x{:08X}, x = {}, y = {}\n", p.get_color(), p.get_x(), p.get_y());      
     }
 } // namespace ct11
+

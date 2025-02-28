@@ -26,7 +26,10 @@ int main(){
     //ct9_demo();
 
 
-    //ct10_demo();
+    ct10_demo();
+    ct11_demo();
+    //No ct_12_demo()
+
     //ct13_demo();
     //ct14_demo();
     //ct15_demo_pod();

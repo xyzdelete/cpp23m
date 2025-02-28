@@ -13,13 +13,13 @@ module;
 #include "ct7.h"
 #include "ct8.h"
 #include "ct9.h"
+#include "ct10.h" // Changed from import to include
+#include "ct11.h" // Changed from import to include
+#include "ct12.h" // Changed from import to include
 
 export module utilities; 
 
 // These remain as module imports
-import ct10;
-import ct11;
-import ct12; // Not used
 import ct13;
 import ct14;
 import ct15;

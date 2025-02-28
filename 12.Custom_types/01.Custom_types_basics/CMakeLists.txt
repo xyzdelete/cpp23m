@@ -31,9 +31,6 @@ target_sources(Rocket
     PUBLIC
     FILE_SET CXX_MODULES FILES
     utilities.ixx
-    ct10.ixx 
-    ct11.ixx
-    ct12.ixx
     ct13.ixx
     ct14.ixx
     ct15.ixx

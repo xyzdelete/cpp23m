@@ -1,3 +1,4 @@
+#pragma once
 /*
     . Exploring constructor delegation
         . Delegated constructors are put in the constructor initializer list.
@@ -9,16 +10,13 @@
         . The copy constructor delegates to the three parameter constructor.
         . This approach keeps your code DRY (Don't Repeat Yourself) and makes it easier to maintain.
 */
-module;
 
 #include <cstdint>
 #include <fmt/format.h>
 
-export module ct10;
-
 namespace ct10
 {
-   export class Pixel {
+   class Pixel {
     public:
         // Default constructor
         Pixel() = default;

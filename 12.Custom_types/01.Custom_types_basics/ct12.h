@@ -1,3 +1,5 @@
+#pragma once
+
 /*
     . Compiler generated constructor summary: 
         1. You have no constructors in your class.
@@ -37,6 +39,5 @@
                                 Pixel b{0xFF000000};  // Constructor with arguments
                                 Pixel c{a};           // Copy constructor
 */
-module;
 
-export module ct12;
+// This header file is intentionally left empty as it contains only comments
