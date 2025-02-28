@@ -7,7 +7,7 @@
             . can read and write contacts to a file   
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
 

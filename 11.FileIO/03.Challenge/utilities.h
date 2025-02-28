@@ -1,5 +1,4 @@
-module;
-
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -12,8 +11,6 @@ module;
 #include <ftxui/screen/screen.hpp>      // for Screen
 #include <ftxui/component/screen_interactive.hpp> // for ScreenInteractive
 #include <ftxui/component/component.hpp>
-
-export module utilities;
 
 namespace it_1
 {
@@ -75,7 +72,7 @@ namespace it_1
         }
     }
 
-    export void app(){
+    void app(){
 
         // Ensure contacts file exists before application runs
         ensure_file_exists();
@@ -144,7 +141,6 @@ namespace it_1
         screen.Loop(renderer);
 
         return;
-
     }
     
 } // namespace it_1
