@@ -1,13 +1,11 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
-
-export module utilities;
 
 namespace it_1
 {
 
-    export void app(){
+    void app(){
 
         //Initialization
         sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
@@ -67,7 +65,7 @@ namespace it_2
     }
 
     //App
-    export void app(){
+    void app(){
         sf::RenderWindow window;
         sf::CircleShape shape;
 
@@ -82,5 +80,3 @@ namespace it_2
     }
     
 } // namespace it_2
-
-
