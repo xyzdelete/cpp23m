@@ -10,13 +10,13 @@ module;
 #include "ct4.h" 
 #include "ct5.h" 
 #include "ct6.h" 
+#include "ct7.h"
+#include "ct8.h"
+#include "ct9.h"
 
 export module utilities; 
 
 // These remain as module imports
-import ct7;
-import ct8;
-import ct9;
 import ct10;
 import ct11;
 import ct12; // Not used

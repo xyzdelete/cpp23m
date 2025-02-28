@@ -7,22 +7,20 @@
         . In this case for example, we don't have to worry about releasing the memory 
             allocated by the smart pointer. It will be automatically released when the object goes out of scope.
 */
-module;
+#pragma once
 
 #include <cstdint>
 #include <fmt/format.h>
 #include <memory>
 
-export module ct9;
-
 namespace ct9
 {
-    export struct Position {
+    struct Position {
         unsigned int x{0};
         unsigned int y{0};
     };
 
-    export class Pixel {
+    class Pixel {
     public:
         Pixel() = default;
         Pixel(uint32_t color, unsigned int x, unsigned int y);
@@ -57,7 +55,7 @@ namespace ct9
     //Implementations
 
     //Constructor
-    Pixel::Pixel(uint32_t color, unsigned int x, unsigned int y)
+    inline Pixel::Pixel(uint32_t color, unsigned int x, unsigned int y)
     : m_color{color},
     m_pos{new Position{x,y}},
     m_smart_pos{std::make_unique<Position>(Position(x,y))}
@@ -65,7 +63,7 @@ namespace ct9
     }
 
     //Copy constructor
-    Pixel::Pixel(const Pixel& source)
+    inline Pixel::Pixel(const Pixel& source)
     : m_color{source.m_color},
     m_pos{new Position{*source.m_pos}},
     m_smart_pos{std::make_unique<Position>(*source.m_smart_pos)}
@@ -73,61 +71,55 @@ namespace ct9
         fmt::print("Pixel deep copied (with both raw and smart pointers)\n");
     }
 
-
     //Destructor
-    Pixel::~Pixel(){
+    inline Pixel::~Pixel(){
         delete m_pos; // Clean up memory allocated by raw pointer
         fmt::print("Pixel destroyed\n");
     }
 
-
-
     // Get color
-    uint32_t Pixel::get_color() const {
+    inline uint32_t Pixel::get_color() const {
         return m_color;
     }
 
     // Set color
-    void Pixel::set_color(uint32_t color) {
+    inline void Pixel::set_color(uint32_t color) {
         m_color = color;
     }
 
     // Getters for raw pointer position (m_pos)
-    unsigned int Pixel::get_x() const {
+    inline unsigned int Pixel::get_x() const {
         return m_pos->x;
     }
 
-    unsigned int Pixel::get_y() const {
+    inline unsigned int Pixel::get_y() const {
         return m_pos->y;
     }
 
     // Setters for raw pointer position (m_pos)
-    void Pixel::set_x(unsigned int x) {
+    inline void Pixel::set_x(unsigned int x) {
         m_pos->x = x;
     }
 
-    void Pixel::set_y(unsigned int y) {
+    inline void Pixel::set_y(unsigned int y) {
         m_pos->y = y;
     }
 
-
     // Getters for smart pointer position (m_smart_pos)
-    unsigned int Pixel::get_smart_x() const {
+    inline unsigned int Pixel::get_smart_x() const {
         return m_smart_pos->x;
     }
 
-    unsigned int Pixel::get_smart_y() const {
+    inline unsigned int Pixel::get_smart_y() const {
         return m_smart_pos->y;
     }
 
     // Setters for smart pointer position (m_smart_pos)
-    void Pixel::set_smart_x(unsigned int x) {
+    inline void Pixel::set_smart_x(unsigned int x) {
         m_smart_pos->x = x;
     }
 
-    void Pixel::set_smart_y(unsigned int y) {
+    inline void Pixel::set_smart_y(unsigned int y) {
         m_smart_pos->y = y;
     }
-
-    
 } // namespace ct9

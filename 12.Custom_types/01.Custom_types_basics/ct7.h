@@ -11,7 +11,7 @@
                 to a valid object upon initialization.
         . When data members are objects of a class without a default constructor:
 
-            . If a member is an object of a class that doesn’t have a default
+            . If a member is an object of a class that doesn't have a default
                  constructor, we must initialize it in the constructor initializer list,
                      as it cannot be default-constructed.
                      
@@ -26,24 +26,20 @@
             The Position struct does not have a default constructor, so we must initialize m_position using the initializer list with the given x and y values.
 
 */
-module;
+#pragma once
 
 #include <cstdint>
 #include <fmt/format.h>
 
-export module ct7;
-
 namespace ct7
 {
-
-    export struct Position {
+    struct Position {
         unsigned int x;
         unsigned int y;
         Position(unsigned int px, unsigned int py) : x{px}, y{py} {}  // No default constructor
     };
 
-
-    export class Pixel {
+    class Pixel {
     public:
         Pixel(uint32_t color, const Position& pos, const uint32_t& ref_color);  // Custom constructor
 
@@ -66,7 +62,7 @@ namespace ct7
     };
 
     // Implementations
-    Pixel::Pixel(uint32_t color, const Position& pos, const uint32_t& ref_color) 
+    inline Pixel::Pixel(uint32_t color, const Position& pos, const uint32_t& ref_color) 
         : m_const_color{color},
         m_ref_color{ref_color},
         m_position{pos.x, pos.y},
@@ -90,29 +86,27 @@ namespace ct7
         );
     }
 
-        uint32_t Pixel::get_color() const {
+    inline uint32_t Pixel::get_color() const {
         return m_color;
     }
 
-    void Pixel::set_color(uint32_t color) {
+    inline void Pixel::set_color(uint32_t color) {
         m_color = color;
     }
 
-    unsigned int Pixel::get_x() const {
+    inline unsigned int Pixel::get_x() const {
         return m_pos_x;
     }
 
-    void Pixel::set_x(unsigned int x) {
+    inline void Pixel::set_x(unsigned int x) {
         m_pos_x = x;
     }
 
-    unsigned int Pixel::get_y() const {
+    inline unsigned int Pixel::get_y() const {
         return m_pos_y;
     }
 
-    void Pixel::set_y(unsigned int y) {
+    inline void Pixel::set_y(unsigned int y) {
         m_pos_y = y;
     }
-
-    
 } // namespace ct7
