@@ -1,13 +1,11 @@
-module;
+#pragma once 
 
 #include <fmt/format.h>
 #include <memory>
 
-export module shared_pointers;
-
 namespace shared_pointers
 {
-    export void tinker_with_shared_pointers(){
+    void tinker_with_shared_pointers(){
 
         //Shared pointers basics
         {

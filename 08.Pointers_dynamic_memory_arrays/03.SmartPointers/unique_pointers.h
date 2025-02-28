@@ -1,13 +1,11 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <memory>
 
-export module unique_pointers;
-
 namespace unique_pointers
 {
-    export void tinker_with_unique_pointers(){
+    void tinker_with_unique_pointers(){
 
         // Stack variables
         /*
