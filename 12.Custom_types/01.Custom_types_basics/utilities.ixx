@@ -4,15 +4,16 @@ module;
 #include <memory>
 #include <vector>
 #include <filesystem>
+#include "ct1.h"
+#include "ct2.h"
+#include "ct3.h"
+#include "ct4.h" 
+#include "ct5.h" 
+#include "ct6.h" 
 
 export module utilities; 
 
-import ct1;
-import ct2;
-import ct3;
-import ct4;
-import ct5;
-import ct6;
+// These remain as module imports
 import ct7;
 import ct8;
 import ct9;

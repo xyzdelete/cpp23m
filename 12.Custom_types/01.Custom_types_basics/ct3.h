@@ -1,17 +1,14 @@
+#pragma once
+
 /*
-    . Separating declarations from definitions in different files.
-        . module interface file: ct4.ixx
-        . module implementation file: ct4.cpp 
+    . Separating declarations from definitions in the same file.
 */
-module;
 
 #include <cstdint>
 
-export module ct4;
-
-namespace ct4
+namespace ct3
 {
-    export class Pixel{
+    class Pixel{
         public: 
             Pixel() = default;
             Pixel(uint32_t color, unsigned int x, unsigned int y);
@@ -31,5 +28,5 @@ namespace ct4
             unsigned int m_pos_x{0};
             unsigned int m_pos_y{0}; 
     };
-    
-} // namespace ct4
+
+} // namespace ct3

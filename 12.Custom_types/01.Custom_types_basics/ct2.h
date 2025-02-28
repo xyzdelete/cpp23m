@@ -1,3 +1,5 @@
+#pragma once
+
 /*
     . Topics: 
         . the private and public access specifiers
@@ -15,17 +17,13 @@
             . on the heap with raw pointers
             . on the heap with smart pointers
 */
-module;
-
 
 #include <cstdint>
 #include <fmt/format.h>
 
-export module ct2;
-
 namespace ct2
 {
-    export class Pixel{
+    class Pixel{
         public: 
 
             //Default constructor: explicitly defaulted

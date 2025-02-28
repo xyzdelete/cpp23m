@@ -1,3 +1,5 @@
+#pragma once
+
 /*
     . The syntax to create classes
     . private and private keywords
@@ -10,15 +12,12 @@
         . changing information in the class object
     . Move the code of the class into a module file.
 */
-module;
 
 #include <cstdint>
 
-export module ct1;
-
 namespace ct1
 {
-    export class Pixel{
+    class Pixel{
         public:
             uint32_t m_color{0xFF000000};
             unsigned int m_pos_x{0};
@@ -27,7 +26,7 @@ namespace ct1
 
 
     /*
-    export struct Pixel{
+    struct Pixel{
         //public:
             uint32_t m_color{0xFF000000};
             unsigned int m_pos_x{0};

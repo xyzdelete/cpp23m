@@ -1,9 +1,5 @@
-module;
-
-#include <cstdint>
+#include "ct4.h"
 #include <fmt/format.h>
-
-module ct4;
 
 namespace ct4
 {
