@@ -1,7 +1,9 @@
-module;
+#pragma once
 
 #include <vector>
 #include <string>
+#include <cmath>
+#include <iostream>
 
 #include <ftxui/dom/elements.hpp>       // for text, Element, hbox, vbox, border
 #include <ftxui/screen/screen.hpp>      // for Screen
@@ -9,8 +11,6 @@ module;
 #include <ftxui/component/screen_interactive.hpp> // for ScreenInteractive
 
 #include <SFML/Graphics.hpp>
-
-export module utilities; 
 
 /*
     Ftxui based calculator
@@ -26,7 +26,7 @@ namespace it_1
     double divide(double a, double b){return b != 0 ? a / b : 0;}
 
 
-    export void app(){
+    void app(){
 
         // UI state variables
         double num1 = 0;
@@ -150,7 +150,7 @@ namespace it_2
         window.display();
     }
 
-    export void app(){
+    void app(){
         double origin[2] = {0.0, 0.0};
         double mouse_position[2] = {0.0, 0.0};
         double distance = 0.0;
@@ -237,7 +237,7 @@ namespace it_3
         window.display();
     }
 
-    export void app(int argc, char* argv[]){
+    void app(int argc, char* argv[]){
 
         if (argc < 3) {
             std::cerr << "Usage: " << argv[0] << " <origin_x> <origin_y>" << std::endl;
@@ -277,5 +277,3 @@ namespace it_3
     }
     
 } // namespace it_3
-
-
