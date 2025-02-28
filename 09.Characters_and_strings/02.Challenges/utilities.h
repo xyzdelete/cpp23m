@@ -1,4 +1,4 @@
-module;
+#pragma once
 
 #include <iostream>
 #include <cctype>
@@ -6,8 +6,6 @@ module;
 #include <string>
 #include <algorithm>
 #include <fmt/format.h>
-
-export module utilities;
 
 /*
 1. Character Analysis Tool
@@ -52,7 +50,7 @@ namespace challenge_1
     }
 
 
-    export void app(){
+    void app(){
         const int MAX_LENGTH{1024};
         char input[MAX_LENGTH] = {0};   // Initialize all elements to 0
         bool end{false};
@@ -98,7 +96,7 @@ Write a program that does the following:
 namespace challenge_2
 {
 
-    export void app(){
+    void app(){
         //Challenge2
         const int MAX_LENGTH = 1024;
         char input[MAX_LENGTH] = {0}; // initialize all elements to 0
@@ -172,7 +170,7 @@ namespace challenge_2
 namespace challenge_3
 {
 
-    export void app(){
+    void app(){
         //Word reverser program
         bool end{false};
 
@@ -271,7 +269,7 @@ namespace challenge_4
         return true;
     }
 
-    export void app(){
+    void app(){
         bool end{false};
 
         while(!end){
@@ -300,9 +298,3 @@ namespace challenge_4
     }
     
 } // namespace challenge_4
-
-
-
-
-
-
