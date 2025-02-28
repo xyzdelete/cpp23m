@@ -1,4 +1,10 @@
 /*
+    . ATTENTION: 
+        . In this header based implementation, if a function is fully defined 
+            in a header file, we use the inline keyword to avoid multiple
+            definition errors. 
+        . If it's included in multiple files, the linker will complain about
+            multiple definitions of the same function, if it's not marked as inline.
     . Idea: The basics of functions and how to separate them across multiple files.
         . Will introduce some concepts about modules: 
             . Separating declarations and definitions in the same file.
@@ -18,10 +24,10 @@
 
 */
 #include <fmt/format.h>
+#include "utilities.h"
+#include "compare.h"
+#include "math.h"
 
-import utilities;
-import compare;
-import math;
 /*
 [return type] name (paramter list){
     [function body]

@@ -1,6 +1,4 @@
-module;
-
-module math;
+#include "math.h"
 
 namespace it_2
 {

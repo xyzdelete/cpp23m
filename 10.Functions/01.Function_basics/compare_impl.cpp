@@ -1,6 +1,4 @@
-module;
-
-module compare;
+#include "compare.h"
 
 namespace it_2
 {
@@ -17,5 +15,4 @@ namespace it_2
         else
             return b;
     }
-    
 } // namespace it_2
