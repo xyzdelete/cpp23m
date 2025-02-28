@@ -1,14 +1,13 @@
-module;
+#pragma once
 
 #include <filesystem>
 #include <fmt/format.h>
+#include "text_files.h"
+#include "binary_files.h"
 
-export module utilities;
+namespace utilities {
 
-import text_files;
-import binary_files;
-
-export void read_write_text_files(){
+void read_write_text_files(){
     std::filesystem::path file_path = R"(D:\sample_file.txt)"; // Windows
     //std::filesystem::path file_path = R"(/path/to/your/input_file.txt)"; // Linux
 
@@ -19,10 +18,9 @@ export void read_write_text_files(){
 
     //Read the content back from the file and print it
     text_files::read_file(file_path);
-
 }
 
-export void read_write_binary_files(){
+void read_write_binary_files(){
     // Define file path
 	std::filesystem::path file_path = R"(D:\sample_file.bin)"; // Windows
     //std::filesystem::path file_path = R"(/path/to/your/input_file.bin)"; // Linux
@@ -34,7 +32,6 @@ export void read_write_binary_files(){
     //Write binary data to the file
     binary_files::write_file(file_path,content);
 
-
     // Read binary data from file
     std::vector<char> read_content = binary_files::read_file(file_path);
 
@@ -44,5 +41,6 @@ export void read_write_binary_files(){
     } else {
         fmt::print("No content read from file.\n");
     }
-
 }
+
+} // namespace utilities

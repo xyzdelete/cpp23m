@@ -1,16 +1,15 @@
-module;
+#pragma once
 
 #include <filesystem>
 #include <fstream>
 #include <fmt/format.h>
-
-export module binary_files;
+#include <vector>
 
 namespace binary_files
 {
 
     // Function to write binary data to a file
-    export void write_file(const std::filesystem::path& file_path, const std::vector<char>& content) {
+    void write_file(const std::filesystem::path& file_path, const std::vector<char>& content) {
         std::ofstream file(file_path, std::ios::out | std::ios::binary); // Binary mode
         if (!file.is_open()) {
             fmt::print("Failed to open file for writing: {}\n", file_path.filename().string());
@@ -23,7 +22,7 @@ namespace binary_files
     }
 
     // Function to read binary data from a file
-    export std::vector<char> read_file(const std::filesystem::path& file_path) {
+    std::vector<char> read_file(const std::filesystem::path& file_path) {
         std::ifstream file(file_path, std::ios::in | std::ios::binary); // Binary mode
         if (!file.is_open()) {
             fmt::print("Failed to open file for reading: {}\n", file_path.filename().string());

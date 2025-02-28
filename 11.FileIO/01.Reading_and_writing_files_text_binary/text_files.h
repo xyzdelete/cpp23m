@@ -1,15 +1,13 @@
-module;
+#pragma once
 
 #include <filesystem>
 #include <fstream>
 #include <fmt/format.h>
 
-export module text_files;
-
 namespace text_files
 {
 
-    export void write_file(const std::filesystem::path& file_path, const std::string& content) {
+    void write_file(const std::filesystem::path& file_path, const std::string& content) {
 
         //Open the file for writing and in append mode
         //Creating the stream object attempts to open the file
@@ -30,7 +28,7 @@ namespace text_files
     }
 
 
-    export void read_file(const std::filesystem::path& file_path) {
+    void read_file(const std::filesystem::path& file_path) {
         std::ifstream file(file_path, std::ios::in); // Open for reading
         if (!file.is_open()) {
             fmt::println("Failed to open file for reading: {}", file_path.filename().string());

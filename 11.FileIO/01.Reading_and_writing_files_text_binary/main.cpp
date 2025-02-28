@@ -4,6 +4,14 @@
             . Fundamental types: 
                 . Reading and writing text files in modern C++
                 . Reading and writing binary files in modern C++    
+
+    . Changing from C++20 Modules to the header based compilation model. We: 
+        1. Changed all `.ixx` files to `.h` header files with `#pragma once` include guards
+        2. Removed module declarations and export keywords
+        3. Changed `import` statements to `#include` directives
+        4. Updated `main.cpp` to include the header files directly
+        5. Created a simpler CMakeLists.txt without module-specific configurations
+        6. Made the utilities namespace non-exported and updated function calls in main
 */
 
 #include <filesystem>
@@ -11,8 +19,7 @@
 #include <iostream>
 #include <cstdio>
 #include <iterator>
-
-import utilities;
+#include "utilities.h"
 
 int main(){
 
@@ -53,10 +60,7 @@ int main(){
     */
 
     //Going through proper functions
-    //read_write_text_files();
+    //utilities::read_write_text_files();
 
-    read_write_binary_files();
-
-
-    
+    utilities::read_write_binary_files();
 }
