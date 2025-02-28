@@ -1,15 +1,13 @@
 /*
     . Relationship between arrays and pointers
 */
-module;
+#pragma once
 
 #include <fmt/format.h>
 
-export module pointers_3;
-
 namespace pointers_3
 {
-    export void pointers_arrays_relationship(){
+    void pointers_arrays_relationship(){
 
         // Pointers and arrays: The relationship
         // The name of the array can be used as a pointer to the first element of the array
@@ -45,7 +43,7 @@ namespace pointers_3
     }
 
 
-    export void swapping_addresses(){
+    void swapping_addresses(){
 
         int arr0[5]{ 1, 2, 3, 4, 5 };
         int arr1[5]{ 6, 7, 8, 9, 10 };

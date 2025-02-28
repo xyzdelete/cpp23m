@@ -1,15 +1,14 @@
 /*
     . Pointers and const
 */
-module;
+#pragma once
 
 #include <fmt/format.h>
 
-export module pointers_2;
 
 namespace pointers_2
 {
-    export void raw_modifiable_variables(){
+    void raw_modifiable_variables(){
 
         //A raw variable that can be modified
         fmt::println( "Raw variable that can be modified: " );
@@ -27,7 +26,7 @@ namespace pointers_2
 
     }
 
-    export void non_const_pointer_to_non_const_data(){
+    void non_const_pointer_to_non_const_data(){
 
         // Pointer: Can modify the data and the pointer itself
         int *p_number1 {nullptr};
@@ -59,7 +58,7 @@ namespace pointers_2
     }
 
 
-    export void pointer_to_const(){
+    void pointer_to_const(){
 
         // Pointer to const
         // Pointer pointing to constant data : You can't modify the data through pointer
@@ -89,7 +88,7 @@ namespace pointers_2
     }
 
 
-    export void where_const_applies(){
+    void where_const_applies(){
 
         // const keyword applies to the variable name.
         fmt::println( "const keyword applies to a variable name: ");
@@ -116,7 +115,7 @@ namespace pointers_2
     }
 
 
-    export void const_data_const_pointer(){
+    void const_data_const_pointer(){
 
         // Both pointer and pointed to value are constant
         const int number5 {459};
@@ -136,7 +135,7 @@ namespace pointers_2
 
     }
 
-    export void non_const_data_const_pointer(){
+    void non_const_data_const_pointer(){
 
         // Pointer is constant (can't make it point anywere else)
         // but pointed to value can change

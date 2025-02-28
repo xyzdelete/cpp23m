@@ -1,16 +1,14 @@
 /*
     . Pointer arithmetic
 */
-module;
+#pragma once 
 
 #include <fmt/format.h>
-
-export module pointers_4;
 
 namespace pointers_4
 {
 
-    export void pointer_arithmetic_navigation(){
+    void pointer_arithmetic_navigation(){
 
         // Increment/ decrement pointer addresses manually
         int scores[10]{ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
@@ -78,7 +76,7 @@ namespace pointers_4
     }
 
 
-    export void pointer_arithmetic_distance(){
+    void pointer_arithmetic_distance(){
 
         int scores[10]{ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
 
@@ -101,7 +99,7 @@ namespace pointers_4
 
     }
 
-    export void pointer_arithmetic_compare_pointers(){
+    void pointer_arithmetic_compare_pointers(){
 
         int scores[10]{ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
 

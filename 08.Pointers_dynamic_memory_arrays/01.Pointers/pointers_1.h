@@ -1,15 +1,13 @@
 /*
     . exploring the basics of pointers
 */
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <iostream>
 
-export module pointers_1;
-
 namespace pointers_1{
-    export void pointer_declaration_initialization(){
+    void pointer_declaration_initialization(){
 
         //1.Declaring and using pointers
         int *p_number{};// Will initialize with nullptr
@@ -30,7 +28,7 @@ namespace pointers_1{
     }
 
 
-    export void assignment_and_access(){
+    void assignment_and_access(){
 
         // Initializing pointers and assigning them data
         // We know that pointers store addresses of variables
@@ -59,7 +57,7 @@ namespace pointers_1{
 
     }
 
-    export void pointer_to_char(){
+    void pointer_to_char(){
 
         //Pointers to char
         const char *message{ "Hello World!" };

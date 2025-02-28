@@ -1,13 +1,12 @@
-module;
+#pragma once
 
-export module utilities; 
+#include "pointers_1.h"
+#include "pointers_2.h"
+#include "pointers_3.h"
+#include "pointers_4.h"
+#include "utilities.h"
 
-import pointers_1;
-import pointers_2;
-import pointers_3;
-import pointers_4;
-
-export void pointer_basics(){
+void pointer_basics(){
 
     //Pointer basics
     //pointers_1::pointer_declaration_initialization();

@@ -9,21 +9,21 @@ project(Rocket  VERSION 1.0.0 LANGUAGES CXX)
 #Require C++23
 set(CXX_STANDARD_REQUIRED ON) #Make C++23 a hard requirement
 set(CMAKE_CXX_STANDARD 23) # Default C++ standard for targets
-set(CMAKE_CXX_SCAN_FOR_MODULES ON)
 
 find_package(fmt CONFIG REQUIRED)
 
 #We're using the project name as the target name, but you can change it to make them different.
 #With this setup, the name of the executable will be the same as the project name.
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} 
+        main.cpp 
+        utilities.h 
+        pointers_1.h 
+        pointers_2.h 
+        pointers_3.h 
+        pointers_4.h)
 
-target_sources(${PROJECT_NAME}
-        PUBLIC
-        FILE_SET CXX_MODULES FILES
-        utilities.ixx
-        pointers_1.ixx 
-        pointers_2.ixx
-        pointers_3.ixx
-        pointers_4.ixx
-)
+#Add the include directory to the target
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+#Link the fmt library to the target
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
