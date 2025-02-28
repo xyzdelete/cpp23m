@@ -1,11 +1,8 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 
-export module utilities; 
-
-export void declaring_and_using_references(){
-
+void declaring_and_using_references() {
     int int_data{ 33 };
 	double double_data{ 55 };
 
@@ -57,11 +54,9 @@ export void declaring_and_using_references(){
 	fmt::println("&ref_int_data: {}", fmt::ptr(&ref_int_data));
 	fmt::println("ref_double_data: {}", ref_double_data);
 	fmt::println("&ref_double_data: {}", fmt::ptr(&ref_double_data));
-
 }
 
-export void comparing_pointers_and_references(){
-
+void comparing_pointers_and_references() {
 	// Declare pointer and reference
 	double double_value{ 12.34 };
 	double &ref_double_value{ double_value };// Reference to double_value
@@ -81,7 +76,6 @@ export void comparing_pointers_and_references(){
 	fmt::println( "p_double_value: {} ", fmt::ptr(p_double_value ));
 	fmt::println( "*p_double_value: {} ", *p_double_value );
 
-
 	//Writting through reference
 	ref_double_value = 18.44;
 		
@@ -89,7 +83,6 @@ export void comparing_pointers_and_references(){
 	fmt::println( "ref_double_value: {}", ref_double_value );
 	fmt::println( "p_double_value: {}", fmt::ptr(p_double_value));
 	fmt::println( "*p_double_value: {}", *p_double_value );
-
 
 	//Can't make a reference reference something else
 	double some_other_double{78.45};
@@ -104,7 +97,6 @@ export void comparing_pointers_and_references(){
 	fmt::println( "p_double_value: {} " , fmt::ptr(p_double_value));
 	fmt::println( "*p_double_value: {}" , *p_double_value );
 
-
 	//Make the pointer point to something else
 	p_double_value = &some_other_double;	// The pointer is trully pointing to something else
 	fmt::println( "Making the pointer point somewhere else..." );
@@ -115,7 +107,6 @@ export void comparing_pointers_and_references(){
 	fmt::println( "p_double_value: {}" , fmt::ptr(p_double_value)); //an address
 	fmt::println( "*p_double_value: {}" , *p_double_value );
 
-
 	*p_double_value = 555.5;
 
 	fmt::println( "double_value: {}" , double_value );
@@ -124,12 +115,9 @@ export void comparing_pointers_and_references(){
 	fmt::println( "&ref_double_value: {}" , fmt::ptr(&ref_double_value));
 	fmt::println( "p_double_value: {}" , fmt::ptr(p_double_value));
 	fmt::println( "*p_double_value: {}" , *p_double_value );
-
 }
 
-
-export void references_and_const(){
-
+void references_and_const() {
 	//Non const reference
 	int age{27};
 	const int& ref_age{age};
@@ -138,12 +126,9 @@ export void references_and_const(){
 	fmt::println("ref_age: {}", ref_age);
 
 	//ref_age = 33; // Error: can't go through a const ref to modify the data.
-
 }
 
-
-export void ref_with_range_based_for_loop(){
-
+void ref_with_range_based_for_loop() {
 	int scores[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 	// Printing before change
@@ -164,5 +149,4 @@ export void ref_with_range_based_for_loop(){
 		fmt::print(" {}", score); 
 	}
 	fmt::print("\n");
-
 }
