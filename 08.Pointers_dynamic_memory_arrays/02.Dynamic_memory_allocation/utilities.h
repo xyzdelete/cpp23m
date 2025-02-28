@@ -1,11 +1,8 @@
-module;
+#pragma once
 
-export module utilities; 
+#include "dynamic_memory_allocation.h"
 
-import dynamic_memory_allocation;
-
-
-export void dynamic_memory_allocation_demo(){
+void dynamic_memory_allocation_demo(){
     //dynamic_memory_allocation::pointer_review();
     //dynamic_memory_allocation::pointers_gone_bad();
     //dynamic_memory_allocation::dynamic_heap_memory();

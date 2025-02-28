@@ -10,7 +10,7 @@
         . static arrays vs dynamic arrays
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
     dynamic_memory_allocation_demo();

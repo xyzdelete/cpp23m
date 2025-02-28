@@ -1,13 +1,11 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <exception>
 
-export module dynamic_memory_allocation;
-
 namespace dynamic_memory_allocation
 {
-    export void pointer_review(){
+    void pointer_review(){
 
         // How we've used pointers so far
         int number {22}; // Stack
@@ -30,7 +28,7 @@ namespace dynamic_memory_allocation
     }
 
 
-    export void pointers_gone_bad(){
+    void pointers_gone_bad(){
 
         // BAD
         // Writing into uninitialized pointer through dereference
@@ -56,7 +54,7 @@ namespace dynamic_memory_allocation
     }
 
 
-    export void dynamic_heap_memory(){
+    void dynamic_heap_memory(){
 
         // Dynamic heap memory
         int *p_number4{nullptr};
@@ -123,7 +121,7 @@ namespace dynamic_memory_allocation
     }
 
 
-    export void dangling_pointers(){
+    void dangling_pointers(){
 
         // Dangling pointer case 1: Uninitialized pointer
         /*
@@ -239,7 +237,7 @@ namespace dynamic_memory_allocation
 
     }
 
-    export void when_new_fails(){
+    void when_new_fails(){
 
         //Allocate for memory in one go
         /*
@@ -281,7 +279,7 @@ namespace dynamic_memory_allocation
 
     }
 
-    export void null_ptr_safety(){
+    void null_ptr_safety(){
 
         // Verbose nullptr check
 
@@ -301,7 +299,7 @@ namespace dynamic_memory_allocation
 
     }
 
-    export void memory_leaks(){
+    void memory_leaks(){
 
         //Non deleted memory
         /*
@@ -340,7 +338,7 @@ namespace dynamic_memory_allocation
 
     }
     
-    export void dynamic_arrays(){
+    void dynamic_arrays(){
 
         constexpr size_t size{ 10 };
 
@@ -382,7 +380,7 @@ namespace dynamic_memory_allocation
     }
 
 
-    export void static_vs_dynamic_arrays(){
+    void static_vs_dynamic_arrays(){
 
         // Static arrays Vs dynamic arrays
         int scores[10]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };// Lives on the stack
@@ -400,10 +398,4 @@ namespace dynamic_memory_allocation
         */
 
     }
-
-
-
-    
-
-    
-} // namespace dynamic_memory_allication
+} // namespace dynamic_memory_allocation
