@@ -1,12 +1,9 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <random>
-
-export module utilities;
-
-import board;
-import tetromino;
+#include "board.h"
+#include "tetromino.h"
 
 Tetromino spawn_new_tetromino() {
     static std::random_device rd;
@@ -15,15 +12,13 @@ Tetromino spawn_new_tetromino() {
     return Tetromino(static_cast<Tetromino::Type>(dis(gen)));
 }
 
-export void app(){
-
+void app(){
     sf::RenderWindow window(sf::VideoMode(Board::WIDTH * Board::BLOCK_SIZE, 
                             Board::HEIGHT * Board::BLOCK_SIZE), 
                             "Tetris");
     Board board;
     BoardEntity entity(board);
     Tetromino current_piece(Tetromino::Type::L);
-
 
     sf::Clock movement_clock;
     sf::Clock fall_clock;
@@ -34,7 +29,6 @@ export void app(){
 
     while ((window.isOpen()))
     {
-
         // Window events
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -46,9 +40,7 @@ export void app(){
         // Input handling with delay. The delay ensures that keypresses do not register 
         // too frequently when a player holds down a movement key. Without it, pressing 
         // and holding a key would move the piece too quickly, making the game unplayable.
-
         if(movement_clock.getElapsedTime().asSeconds() >= move_delay){
-
             // Save the current state in case a collision occurs.
             current_piece.backup_position();
             bool moved {false};
@@ -76,7 +68,6 @@ export void app(){
                 }
                 movement_clock.restart();
             }
-
         } // Movement
 
         //Automatic falling
@@ -85,7 +76,6 @@ export void app(){
             current_piece.move_down();
 
             if(board.is_collision(current_piece)){
-
                 //Bring the piece back to its previous position, if it falls our of range
                 current_piece.undo_move();
 
@@ -94,17 +84,13 @@ export void app(){
 
                 //Spawn a new piece
                 current_piece = spawn_new_tetromino();
-
             }
-
             fall_clock.restart();
-
         }
 
         board.update_tetromino(current_piece);
         window.clear(sf::Color::Black);
         entity.draw(window);
         window.display();
-
     }
 }
