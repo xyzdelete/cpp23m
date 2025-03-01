@@ -1,9 +1,8 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 
-export module game;
-export class Game {
+class Game {
 public:
     Game();
     void run();

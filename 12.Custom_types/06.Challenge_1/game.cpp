@@ -1,8 +1,5 @@
-module;
-
+#include "game.h"
 #include <fmt/format.h>
-
-module game;
 
 Game::Game() : window_{sf::VideoMode(800, 600), "Tetris"} {}
 

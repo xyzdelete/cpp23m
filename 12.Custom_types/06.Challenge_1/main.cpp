@@ -2,7 +2,7 @@
     . Organize a basic SFML application into classes.
 */
 
-import game;
+#include "game.h"
 
 int main(){
     Game game;
