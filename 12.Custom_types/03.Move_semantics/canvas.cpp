@@ -1,10 +1,7 @@
-module;
-
+#include "canvas.h"
 #include <stdexcept>
 #include <utility>
 #include <fmt/format.h>
-
-module canvas;
 
 namespace raw
 {

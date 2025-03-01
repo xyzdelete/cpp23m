@@ -3,17 +3,12 @@
     . The purpose of an rvalue reference is to make it possible for a particular function
             overload to be chosen when an rvalue is involved.
 */
-
-module;
+#pragma once
 
 #include <fmt/format.h>
 
-export module move_semantics_02;
-
 namespace move_semantics_02
 {
-
-
     struct Position{
         unsigned int x;
         unsigned int y;
@@ -22,7 +17,6 @@ namespace move_semantics_02
     double add(double a,  double b){
         return a + b;
     }
-
 
     //Two functions, one takes an lvalue reference, the other takes an rvalue reference
     /*
@@ -42,7 +36,7 @@ namespace move_semantics_02
     }
     
 
-    export void try_out_move_semantics(){
+    void try_out_move_semantics(){
 
         //The basics of rvalue references
         /*

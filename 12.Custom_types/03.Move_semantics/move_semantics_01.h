@@ -1,9 +1,6 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
-
-
-export module move_semantics_01;
 
 namespace move_semantics_01
 {
@@ -11,7 +8,7 @@ namespace move_semantics_01
         return a + b;
     }
 
-    export void try_out_move_semantics(){
+    void try_out_move_semantics(){
 
         int x{ 5 };// x,y and z are all lvalues, they have a memory address we
         int y{ 10 };//  can retrieve and use later on ,

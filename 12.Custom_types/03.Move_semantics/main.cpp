@@ -17,18 +17,10 @@
         .#8: Passing by rvalue reference
 */
 #include <fmt/format.h>
-
-import utilities;
-
-
+#include "utilities.h"
 
 int main(){
-
     //move_semantics_01_demo();
     //move_semantics_02_demo();
     move_semantics_03_demo();
-
-
-
-    
 }

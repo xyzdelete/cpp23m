@@ -1,16 +1,12 @@
-module;
-
+#include "pixel.h"
 #include <stdexcept>
 #include <fmt/format.h>
-
-module pixel;
 
 
 Pixel::Pixel(uint32_t initial_color, Position initial_position)
     : m_color(initial_color), m_position(initial_position)
 {
 }
-
 
 void Pixel::set_color(uint32_t color) {
     if (color > 0xFFFFFFFF) {

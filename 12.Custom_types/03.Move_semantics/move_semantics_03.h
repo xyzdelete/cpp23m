@@ -1,11 +1,9 @@
-module;
+#pragma once
 
 #include <fmt/format.h>
 #include <vector>
 
-export module move_semantics_03;
-
-import canvas;
+#include "canvas.h"
 
 namespace move_semantics_03
 {
@@ -13,7 +11,7 @@ namespace move_semantics_03
         return raw::Canvas(width, height);
     }
 
-    export void canvas_move_semantics_demo_1(){
+    void canvas_move_semantics_demo_1(){
         std::vector<raw::Canvas> canvases(3);
 
         for(size_t i{0} ; i < 3 ; ++i){
@@ -24,7 +22,7 @@ namespace move_semantics_03
     }
 
 
-    export void canvas_move_semantics_demo_2(){
+    void canvas_move_semantics_demo_2(){
         raw::Canvas c(10,10);
         c = make_canvas(20,20);
 

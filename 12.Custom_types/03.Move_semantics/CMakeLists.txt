@@ -15,16 +15,19 @@ find_package(fmt CONFIG REQUIRED)
 
 #We're using the project name as the target name, but you can change it to make them different.
 #With this setup, the name of the executable will be the same as the project name.
-add_executable(${PROJECT_NAME} main.cpp pixel.cpp canvas.cpp)
-
-target_sources(${PROJECT_NAME}
-        PUBLIC
-        FILE_SET CXX_MODULES FILES
-        utilities.ixx
-        move_semantics_01.ixx
-        move_semantics_02.ixx
-        pixel.ixx 
-        canvas.ixx
-        move_semantics_03.ixx
+add_executable(${PROJECT_NAME} 
+        utilities.h 
+        main.cpp 
+        pixel.h
+        pixel.cpp 
+        canvas.h
+        canvas.cpp
+        move_semantics_01.h
+        move_semantics_02.h
+        move_semantics_03.h
 )
+
+#Add include directories
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR})
+#Link fmt
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)

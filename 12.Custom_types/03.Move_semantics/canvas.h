@@ -1,16 +1,14 @@
-module;
+#pragma once
 
 #include <cstddef>
 #include <fmt/format.h>
 #include <vector>
 
-export module canvas;
-
-export import pixel;
+#include "pixel.h"
 
 namespace raw
 {
-    export class Canvas{
+    class Canvas{
     public:
         Canvas() = default;
         Canvas(std::size_t width, std::size_t height);
@@ -35,7 +33,7 @@ namespace raw
         Pixel** m_pixels{ nullptr };
     };
 
-    export void swap(Canvas& first, Canvas& second) noexcept;
+    void swap(Canvas& first, Canvas& second) noexcept;
 } // namespace raw
 
 
@@ -56,7 +54,7 @@ namespace modern
                 any of the 5, you probably know better than the compiler and should declare all 5.
         */
 
-    export class Canvas {
+    class Canvas {
     public:
         Canvas(std::size_t width, std::size_t height);
         void modify_pixel(std::size_t x, std::size_t y, const Pixel& pixel);
