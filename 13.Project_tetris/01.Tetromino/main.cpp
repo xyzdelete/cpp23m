@@ -4,9 +4,9 @@
     . BoardEntity class handles the graphical representation of the board.
     . We wire up everything in the main function.
 */
-import utilities;
+#include "utilities.h"
 
 int main(){
     app();
-    
+    return 0;
 }

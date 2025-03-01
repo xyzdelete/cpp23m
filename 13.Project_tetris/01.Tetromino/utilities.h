@@ -1,11 +1,8 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
-
-export module utilities;
-
-import board;
-import tetromino;
+#include "board.h"
+#include "tetromino.h"
 
 void handleInput(sf::RenderWindow& window, Tetromino& tetromino) {
     sf::Event event;
@@ -32,7 +29,7 @@ void handleInput(sf::RenderWindow& window, Tetromino& tetromino) {
     }
 }
 
-export void app(){
+void app(){
 
     sf::RenderWindow window(sf::VideoMode(Board::WIDTH * Board::BLOCK_SIZE, 
                             Board::HEIGHT * Board::BLOCK_SIZE), 

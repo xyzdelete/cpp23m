@@ -1,10 +1,8 @@
-module;
+#pragma once
 
 #include <array>
 
-export module tetromino;
-
-export class Tetromino{
+class Tetromino{
 public:
     enum Type { I = 1, O, T, S, Z, J, L };
     static constexpr int GRID_SIZE = 4; 
@@ -78,6 +76,4 @@ private:
     int pos_x; // x position on the board with a size of (width = 10, height = 20) in our implementation
     int pos_y; // y position on the board with a size of (width = 10, height = 20) in our implementation
     std::array<std::array<bool, GRID_SIZE>, GRID_SIZE> current_shape;
-
-
 };
