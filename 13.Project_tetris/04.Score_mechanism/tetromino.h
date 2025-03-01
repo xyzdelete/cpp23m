@@ -1,10 +1,8 @@
-module;
+#pragma once
 
 #include <array>
 
-export module tetromino;
-
-export class Tetromino{
+class Tetromino {
 public:
     enum Type { I = 1, O, T, S, Z, J, L };
     static constexpr int GRID_SIZE = 4; 
@@ -53,16 +51,12 @@ public:
         last_rotation = current_rotation;
     }
 
-
-
-
     int get_pos_x() const { return pos_x; }
     int get_pos_y() const { return pos_y; }
     Type get_type() const { return current_type; }
     const auto& get_shape() const { return current_shape; }
 
 private: 
-
     void initialize_shape(Type type) {
         current_shape.fill({});
         switch (type) {
@@ -95,9 +89,6 @@ private:
                 break;
         }
     }
-
-
-private: 
 
     Type current_type;
     int current_rotation;

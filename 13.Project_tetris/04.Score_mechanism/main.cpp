@@ -9,7 +9,7 @@
         . Game over detection
         . Visual feedback when game over and score
 */
-import utilities;
+#include "utilities.h"
 
 int main(){
     app();
