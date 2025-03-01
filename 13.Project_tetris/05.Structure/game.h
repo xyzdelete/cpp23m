@@ -1,17 +1,14 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "board.h"
+#include "tetromino.h"
+#include "utilities.h"
+#include "gamestate.h"
+#include "board_entity.h"
 
-export module game;
-
-import board;
-import tetromino;
-import utilities;
-import gamestate;
-import board_entity;
-
-export class Game{
+class Game{
 
     public:
 

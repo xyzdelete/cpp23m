@@ -1,12 +1,10 @@
-module;
+#pragma once
 
-export module gamestate;
+#include "board.h"
+#include "tetromino.h"
+#include "utilities.h"
 
-import board;
-import tetromino;
-import utilities;
-
-export class GameState{
+class GameState{
     public: 
     GameState() 
         : board()

@@ -1,13 +1,11 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <array>
 #include <span>
+#include "tetromino.h"
 
-export module board;
-import tetromino;
-
-export class Board{
+class Board{
     public:
     static constexpr int WIDTH = 10;
     static constexpr int HEIGHT = 20;
@@ -173,5 +171,3 @@ export class Board{
         std::array< std::array<int, WIDTH> , HEIGHT> grid; 
         std::array<std::array<bool, WIDTH>, HEIGHT> locked_grid{};
 };
-
-

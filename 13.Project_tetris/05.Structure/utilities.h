@@ -1,22 +1,20 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <random>
 #include <iostream>
+#include "board.h"
+#include "tetromino.h"
+#include "board_entity.h"
 
-export module utilities;
-import board;
-import tetromino;
-import board_entity;
-
-export Tetromino spawn_new_tetromino() {
+inline Tetromino spawn_new_tetromino() {
     static std::random_device rd;
     static std::mt19937 gen(rd());
     static std::uniform_int_distribution<> dis(1, 7);
     return Tetromino(static_cast<Tetromino::Type>(dis(gen)));
 }
 
-export void draw_next_piece(sf::RenderWindow& window, const Tetromino& next_piece) {
+inline void draw_next_piece(sf::RenderWindow& window, const Tetromino& next_piece) {
     // Draw preview box
     sf::RectangleShape preview_box;
     preview_box.setSize(sf::Vector2f(6 * Board::BLOCK_SIZE, 6 * Board::BLOCK_SIZE));
@@ -49,7 +47,7 @@ export void draw_next_piece(sf::RenderWindow& window, const Tetromino& next_piec
     }
 }
 
-export void draw_score(sf::RenderWindow& window, int score, sf::Font& font, bool game_over) {
+inline void draw_score(sf::RenderWindow& window, int score, sf::Font& font, bool game_over) {
     sf::Text score_text;
     score_text.setFont(font);
     score_text.setCharacterSize(24);

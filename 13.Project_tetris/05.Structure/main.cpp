@@ -4,7 +4,7 @@
         . GameState
         . BoardEntity
 */
-import game;
+#include "game.h"
 
 int main(){
     Game game;
