@@ -1,15 +1,12 @@
-module;
+#pragma once
 
-#include <iostream>
 #include <stdexcept>
 #include <fmt/format.h>
-
-export module time;
 
 namespace it_1
 {
     // Iteration 1 will make the class constexpr
-    export class Time24 {
+    class Time24 {
         public:
             // Constructor
             constexpr Time24(int h = 0, int m = 0) : hour(h), minute(m) {
@@ -65,7 +62,7 @@ namespace it_1
 namespace it_2
 {
     // Iteration 2 will make the class consteval
-    export class Time24 {
+    class Time24 {
         public:
             // Constructor
             consteval Time24(int h = 0, int m = 0) : hour(h), minute(m) {
@@ -115,4 +112,3 @@ namespace it_2
             }
     };    
 } // namespace it_2
-

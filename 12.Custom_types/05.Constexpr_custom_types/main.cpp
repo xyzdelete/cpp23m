@@ -9,14 +9,13 @@
             . fmt::println is not constexpr in the fmt library.
             . We can't call it from the print_time() function.
         . The definitions of constexpr or consteval functions must be available in 
-            the module interface file. If you put it in the implementation file,
+            the header file. If you put it in a separate cpp file,
             you may face issues.
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
-
     use_time_demo();
-    
+    return 0;
 }
