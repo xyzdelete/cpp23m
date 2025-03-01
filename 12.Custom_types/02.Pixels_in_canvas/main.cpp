@@ -21,10 +21,9 @@
                         . };
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
-
     canvas_demo();
-    
+    return 0;
 }
