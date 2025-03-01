@@ -1,10 +1,8 @@
-module;
+#pragma once
 
 #include <array>
 
-export module tetromino;
-
-export class Tetromino{
+class Tetromino{
 public:
     enum Type { I = 1, O, T, S, Z, J, L };
     static constexpr int GRID_SIZE = 4; 

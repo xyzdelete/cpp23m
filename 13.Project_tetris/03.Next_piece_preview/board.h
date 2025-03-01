@@ -1,13 +1,11 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <array>
 #include <span>
+#include "tetromino.h"
 
-export module board;
-import tetromino;
-
-export class Board{
+class Board{
     public:
     static constexpr int WIDTH = 10;
     static constexpr int HEIGHT = 20;
@@ -127,7 +125,7 @@ export class Board{
 };
 
 
-export class BoardEntity {
+class BoardEntity {
 public:
     explicit BoardEntity(const Board& board) : board_(board) {}
 

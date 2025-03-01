@@ -1,12 +1,8 @@
-module;
-
+#include "utilities.h"
+#include "board.h"
+#include "tetromino.h"
 #include <SFML/Graphics.hpp>
 #include <random>
-
-export module utilities;
-
-import board;
-import tetromino;
 
 Tetromino spawn_new_tetromino() {
     static std::random_device rd;
@@ -51,7 +47,7 @@ void draw_next_piece(sf::RenderWindow& window, const Tetromino& next_piece){
 
 }
 
-export void app(){
+void app(){
 
     sf::RenderWindow window(sf::VideoMode((Board::WIDTH + 7) * Board::BLOCK_SIZE, 
                             Board::HEIGHT * Board::BLOCK_SIZE), 

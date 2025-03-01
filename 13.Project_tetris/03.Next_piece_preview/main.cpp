@@ -20,7 +20,7 @@
                 draw_next_piece(window, next_piece); is called before window.display();.
                 Ensures the preview updates whenever a new piece spawns.
 */
-import utilities;
+#include "utilities.h"
 
 int main(){
     app();
