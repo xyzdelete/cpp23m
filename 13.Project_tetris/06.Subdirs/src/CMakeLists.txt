@@ -1,18 +1,18 @@
 find_package(fmt CONFIG REQUIRED)
 find_package(SFML COMPONENTS system window graphics audio CONFIG REQUIRED)
 
-#We're using the project name as the target name, but you can change it to make them different.
-#With this setup, the name of the executable will be the same as the project name.
-add_executable(${PROJECT_NAME} main.cpp)
-
-target_sources(${PROJECT_NAME}
-        PUBLIC
-        FILE_SET CXX_MODULES FILES
-        utils/utilities.ixx
-        board/board.ixx
-        board/board_entity.ixx 
-        pieces/tetromino.ixx 
-        game/gamestate.ixx
-        game/game.ixx 
+# Add all the header and source files
+set(TETRIS_HEADERS
+    utils/utilities.h
+    board/board.h
+    board/board_entity.h 
+    pieces/tetromino.h 
+    game/gamestate.h
+    game/game.h
 )
+
+# Add the executable with the main source file
+add_executable(${PROJECT_NAME} main.cpp ${TETRIS_HEADERS})
+
+# Link with required libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt sfml-graphics)

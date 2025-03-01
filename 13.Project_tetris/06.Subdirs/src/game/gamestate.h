@@ -1,13 +1,11 @@
-module;
+#pragma once
 
-export module gamestate;
+#include "../board/board.h"
+#include "../pieces/tetromino.h"
+#include "../utils/utilities.h"
 
-import board;
-import tetromino;
-import utilities;
-
-export class GameState{
-    public: 
+class GameState{
+public: 
     GameState() 
         : board()
         , current_piece(spawn_new_tetromino())
@@ -74,11 +72,7 @@ export class GameState{
     bool is_game_over() const { return game_over; }
     int get_score() const { return score; }
 
-
-
-
 private: 
-
     void handle_falling(float delta_time) {
         falling_time += delta_time;
         if (falling_time >= fall_delay) {

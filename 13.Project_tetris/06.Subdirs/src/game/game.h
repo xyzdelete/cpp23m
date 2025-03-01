@@ -1,22 +1,17 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "../board/board.h"
+#include "../pieces/tetromino.h"
+#include "../utils/utilities.h"
+#include "gamestate.h"
+#include "../board/board_entity.h"
 
-export module game;
-
-import board;
-import tetromino;
-import utilities;
-import gamestate;
-import board_entity;
-
-export class Game{
-
-    public:
-
+class Game {
+public:
     Game() : window(sf::VideoMode((Board::WIDTH + 7) * Board::BLOCK_SIZE, 
-                   Board::HEIGHT * Board::BLOCK_SIZE), "Tetris"),
+                 Board::HEIGHT * Board::BLOCK_SIZE), "Tetris"),
              entity(state.get_board()) {
         window.setFramerateLimit(60);
         if (!font.loadFromFile("arial.ttf")) {
@@ -31,7 +26,6 @@ export class Game{
             render();
         }
     }
-
 
 private: 
     //Private member functions

@@ -1,12 +1,9 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
+#include "board.h"
 
-export module board_entity;
-
-import board;
-
-export class BoardEntity {
+class BoardEntity {
 public:
     explicit BoardEntity(const Board& board) : board_(board) {}
 

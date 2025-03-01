@@ -1,14 +1,12 @@
-module;
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <array>
 #include <span>
+#include "../pieces/tetromino.h"
 
-export module board;
-import tetromino;
-
-export class Board{
-    public:
+class Board{
+public:
     static constexpr int WIDTH = 10;
     static constexpr int HEIGHT = 20;
     static constexpr float BLOCK_SIZE = 30.0f;
@@ -35,15 +33,12 @@ export class Board{
         locked_grid.fill({});
     }
 
-
     void clear_board(){
         grid.fill({});
         locked_grid.fill({});
     }
 
     void update_tetromino(const Tetromino& tetromino) {
-        //clear_board();  // Clear the board before updating
-
         // Clear only moving pieces, keep locked ones
         for (int y = 0; y < HEIGHT; ++y) {
             for (int x = 0; x < WIDTH; ++x) {
@@ -163,15 +158,12 @@ export class Board{
         return lines_cleared;
     }
 
-
     bool is_game_over(const Tetromino& tetromino) const {
         // If a newly spawned piece immediately collides, game is over
         return is_collision(tetromino);
     }
 
-    private:
-        std::array< std::array<int, WIDTH> , HEIGHT> grid; 
-        std::array<std::array<bool, WIDTH>, HEIGHT> locked_grid{};
+private:
+    std::array< std::array<int, WIDTH> , HEIGHT> grid; 
+    std::array<std::array<bool, WIDTH>, HEIGHT> locked_grid{};
 };
-
-
