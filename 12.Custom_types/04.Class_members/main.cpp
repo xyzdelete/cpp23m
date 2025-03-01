@@ -6,10 +6,8 @@
         . reference members   
 */
 
-import utilities;
+#include "utilities.h"
 
 int main(){
-
     static_functions_demo();
-    
 }

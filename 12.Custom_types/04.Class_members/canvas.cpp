@@ -1,16 +1,9 @@
-module;
-
 #include <stdexcept>
 #include <utility>
 #include <fmt/format.h>
-
-module canvas;
-
+#include "canvas.h"
 
 namespace raw{
-
-    //This definition is not needed if we make the static member variable inline
-    //std::size_t Canvas::s_canvas_count = 0;
 
     Canvas::Canvas(std::size_t width, std::size_t height, const Configuration& config)
         : m_width{width}, m_height{height}, m_config{config} {

@@ -1,7 +1,5 @@
-module;
 #include <stdexcept>
-
-module pixel;
+#include "pixel.h"
 
 Pixel::Pixel(uint32_t initial_color, Position initial_position)
     : m_color(initial_color), m_position(initial_position) {}

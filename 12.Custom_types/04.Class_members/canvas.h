@@ -1,29 +1,24 @@
-module;
+#pragma once
 
 #include <cstddef>
 #include <fmt/format.h>
 #include <vector>
+#include <string>
+#include "pixel.h"
 
+namespace raw {
 
-export module canvas;
-
-export import pixel;
-
-namespace raw{
-
-    //Add a configration struct and set up a method to print the configuration.
-    export struct Configuration{
+    struct Configuration {
         std::size_t width{0};
         std::size_t height{0};
         std::string title{""};
         bool full_screen{false};
     };
 
-
-    export class Canvas {
+    class Canvas {
 
     public:
-        Canvas(std::size_t width , std::size_t height, const Configuration& config);
+        Canvas(std::size_t width, std::size_t height, const Configuration& config);
         Canvas(const Canvas& src);
         Canvas(Canvas&& other) noexcept;
         ~Canvas();
@@ -50,7 +45,6 @@ namespace raw{
         Pixel** m_pixels{ nullptr };
 
         //Static member variable
-        //static std::size_t s_canvas_count;
         static inline std::size_t s_canvas_count {0};
 
         // Static constexpr variables: These are used in the create_default_canvas method.
@@ -59,9 +53,7 @@ namespace raw{
 
         // Reference member variable
         const Configuration& m_config;
-
-
     };
 
-    export void swap(Canvas& first, Canvas& second) noexcept;
+    void swap(Canvas& first, Canvas& second) noexcept;
 }   // namespace raw
