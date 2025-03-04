@@ -16,7 +16,7 @@ import utilities;
 const constinit int age{24};
 
 int randomizer = 5;
-constinit int  car_count{add(3,randomizer)}; // Error. randomizer is not a compile time value
+//constinit int  car_count{add(3,randomizer)}; // Error. randomizer is not a compile time value
 
 int main(){
 
