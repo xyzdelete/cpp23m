@@ -2,6 +2,7 @@ module;
 
 #include <vector>
 #include <string>
+#include <cmath>
 
 #include <ftxui/dom/elements.hpp>       // for text, Element, hbox, vbox, border
 #include <ftxui/screen/screen.hpp>      // for Screen
