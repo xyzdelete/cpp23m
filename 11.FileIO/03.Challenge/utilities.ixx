@@ -21,7 +21,8 @@ namespace it_1
     using namespace ftxui;
 
     // File path for storing contacts
-    const fs::path contacts_file = R"(D:\contacts.txt)";
+    //const fs::path contacts_file = R"(D:\contacts.txt)";  // This path is for Windows. Adapt if needed
+    const fs::path contacts_file = R"(/home/daniel/contacts.txt)";    // This path is for Linux. Adapt if needed
 
     // On Linux, it could be something like:
     // const fs::path contacts_file = "/home/user/contacts.txt";
