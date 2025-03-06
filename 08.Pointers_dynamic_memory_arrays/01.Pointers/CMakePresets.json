@@ -150,7 +150,7 @@
       }
     },
     {
-      "name": "linux_clang",
+      "name": "linux-clang",
       "displayName": "Linux Clang++",
       "description": "Builds with the clang++ compiler",
       "inherits": "base",
@@ -226,15 +226,15 @@
       "inherits": "release"
     },
     {
-      "name": "linux_clang-debug",
+      "name": "linux-clang-debug",
       "displayName": "Debug",
-      "configurePreset": "linux_clang",
+      "configurePreset": "linux-clang",
       "inherits": "debug"
     },
     {
-      "name": "linux_clang-release",
+      "name": "linux-clang-release",
       "displayName": "Release",
-      "configurePreset": "linux_clang",
+      "configurePreset": "linux-clang",
       "inherits": "release"
     }
   ],
