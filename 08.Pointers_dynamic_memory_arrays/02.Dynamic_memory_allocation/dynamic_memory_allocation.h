@@ -396,6 +396,9 @@ namespace dynamic_memory_allocation
             fmt::print( "value : " , s );
         }
         */
+       //We should remember to release the memory
+       delete [] p_scores1;
+       p_scores1 = nullptr;
 
     }
 } // namespace dynamic_memory_allocation
