@@ -398,6 +398,8 @@ namespace dynamic_memory_allocation
             fmt::print( "value : " , s );
         }
         */
+       //You should release this memory
+       delete [] p_scores1;
 
     }
 
