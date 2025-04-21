@@ -400,6 +400,7 @@ namespace dynamic_memory_allocation
         */
        //You should release this memory
        delete [] p_scores1;
+       p_scores1 = nullptr;
 
     }
 
