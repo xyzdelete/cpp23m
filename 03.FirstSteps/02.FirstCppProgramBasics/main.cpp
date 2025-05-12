@@ -53,8 +53,6 @@ import utilities; // Import the utilities module
 
 int main()
 {
-
-    do_work(); // snake_case
-
+    fmt::println("Hello, World!");
     return 0;
 }
