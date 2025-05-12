@@ -40,11 +40,11 @@
     },
     {
       "name": "linux-gcc",
-      "displayName": "Linux GCC",
-      "description": "Builds with the default host compiler on Linux",
+      "displayName": "Linux g++",
+      "description": "Builds with the g++",
       "inherits": "base",
       "cacheVariables": {
-        "VCPKG_TARGET_TRIPLET": "x64-linux-dynamic",
+        "VCPKG_TARGET_TRIPLET": "x64-linux-static",
         "CMAKE_CXX_COMPILER": "g++"
       },
       "condition": {
@@ -56,11 +56,11 @@
     {
       "name": "macos",
       "displayName": "MacOS",
-      "description": "Builds with the default host compiler on x64-based MacOS",
+      "description": "Builds with the default host compiler",
       "inherits": "base",
       "cacheVariables": {
         "CMAKE_OSX_ARCHITECTURES": "x86_64",
-        "VCPKG_TARGET_TRIPLET": "x64-osx-dynamic"
+        "VCPKG_TARGET_TRIPLET": "x64-osx-static"
       },
       "condition": {
         "type": "equals",
@@ -71,11 +71,11 @@
     {
       "name": "macos-arm",
       "displayName": "MacOS ARM",
-      "description": "Builds with the default host compiler on ARM-based MacOS",
+      "description": "Builds with the default host compiler",
       "inherits": "base",
       "cacheVariables": {
         "CMAKE_OSX_ARCHITECTURES": "arm64",
-        "VCPKG_TARGET_TRIPLET": "arm64-osx-dynamic"
+        "VCPKG_TARGET_TRIPLET": "arm64-osx-static"
       },
       "architecture": {
         "value": "arm64",
@@ -90,15 +90,35 @@
     {
       "name": "cl",
       "displayName": "Windows cl",
-      "description": "Builds with Visual C++ on Windows",
+      "description": "Builds with cl",
       "inherits": "base",
       "toolset": {
         "value": "host=x64",
         "strategy": "external"
       },
       "cacheVariables": {
-        "VCPKG_TARGET_TRIPLET": "x64-windows",
+        "VCPKG_TARGET_TRIPLET": "x64-windows-static-md",
         "CMAKE_CXX_COMPILER": "cl.exe"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "windows-clang",
+      "displayName": "Windows clang-cl",
+      "description": "Builds with clang-cl",
+      "inherits": "base",
+      "toolset": {
+        "value": "host=x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/custom-triplets",
+        "VCPKG_TARGET_TRIPLET": "x64-win-llvm-static-md",
+        "CMAKE_CXX_COMPILER": "clang-cl.exe"
       },
       "condition": {
         "type": "equals",
@@ -109,7 +129,7 @@
     {
       "name": "linux-release",
       "displayName": "Linux Release",
-      "description": "Builds for Linux like an official release",
+      "description": "Builds release",
       "inherits": "release",
       "cacheVariables": {
         "CMAKE_CXX_COMPILER_LAUNCHER": "sccache",
@@ -120,7 +140,7 @@
     {
       "name": "macos-release",
       "displayName": "MacOS Release",
-      "description": "Builds for MacOS like an official release",
+      "description": "Builds release",
       "inherits": "release",
       "cacheVariables": {
         "ES_CREATE_BUNDLE": "ON",
@@ -134,7 +154,7 @@
     {
       "name": "macos-arm-release",
       "displayName": "MacOS ARM Release",
-      "description": "Builds for MacOS ARM like an official release",
+      "description": "Builds release",
       "inherits": "release",
       "architecture": {
         "value": "arm64",
@@ -151,12 +171,12 @@
     },
     {
       "name": "linux-clang",
-      "displayName": "Linux Clang++",
-      "description": "Builds with the clang++ compiler",
+      "displayName": "Linux clang++",
+      "description": "Builds with the clang++",
       "inherits": "base",
       "cacheVariables": {
         "CMAKE_CXX_COMPILER": "clang++",
-        "VCPKG_TARGET_TRIPLET": "x64-linux-dynamic",
+        "VCPKG_TARGET_TRIPLET": "x64-linux-static",
         "CMAKE_BUILD_TYPE": "Debug"
       },
       "condition": {
@@ -226,6 +246,18 @@
       "inherits": "release"
     },
     {
+      "name": "windows-clang-debug",
+      "displayName": "Debug",
+      "configurePreset": "windows-clang",
+      "inherits": "debug"
+    },
+    {
+      "name": "windows-clang-release",
+      "displayName": "Release",
+      "configurePreset": "windows-clang",
+      "inherits": "release"
+    },
+    {
       "name": "linux-clang-debug",
       "displayName": "Debug",
       "configurePreset": "linux-clang",
@@ -238,6 +270,5 @@
       "inherits": "release"
     }
   ],
-  "testPresets": [
-  ]
+  "testPresets": []
 }
